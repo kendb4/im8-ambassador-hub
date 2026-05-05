@@ -4,26 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IM8 Ambassador Hub — Creator Resources</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'ABCArizonaFlare';
+      src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663342551369/5w8yk3YqkGDo4mWSJJ79zM/ABCArizonaFlare-Regular_285e2e76.otf') format('opentype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'ABCArizonaFlare';
+      src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663342551369/5w8yk3YqkGDo4mWSJJ79zM/ABCArizonaFlare-Medium_91f572ee.otf') format('opentype');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'ABCArizonaFlare';
+      src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663342551369/5w8yk3YqkGDo4mWSJJ79zM/ABCArizonaFlare-Bold_ad993fb6.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663342551369/5w8yk3YqkGDo4mWSJJ79zM/Aeonik-Regular_9ff249da.otf') format('opentype');
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663342551369/5w8yk3YqkGDo4mWSJJ79zM/Aeonik-Medium_bb7d2f92.otf') format('opentype');
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663342551369/5w8yk3YqkGDo4mWSJJ79zM/Aeonik-Bold_752e6ce8.otf') format('opentype');
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+  </style>
 
   <style>
     :root {
-      --burgundy:   #6b0010;
-      --crimson:    #b8001f;
-      --coral:      #f07070;
-      --blush:      #e8c8c8;
-      --cream:      #f5ede0;
-      --gold:       #c5973b;
+      /* Brand primary */
+      --burgundy:   #50000B;
+      --crimson:    #A40011;
+      --coral:      #FF9693;
+      --blush:      #E1CBB9;
+      /* Brand neutrals */
+      --cream:      #F5EDE0;
+      --off-white:  #FAF6F2;
+      --gold:       #C5973B;
       --white:      #ffffff;
-      --text:       #2a0008;
-      --muted:      #7a5050;
-      --bg-dark:    #1c0006;
-      --bg-mid:     #3d0010;
-      --divider:    rgba(176, 0, 31, 0.15);
-      --font-display: "Cormorant Garamond", Georgia, serif;
-      --font-body:    "Jost", system-ui, sans-serif;
+      /* Text system */
+      --text:       #5A000B;
+      --text-body:  #1A0508;
+      --muted:      #8C7A6E;
+      /* Backgrounds */
+      --bg-dark:    #50000B;
+      --bg-mid:     #3D0010;
+      --divider:    rgba(164, 0, 17, 0.12);
+      --font-display: 'ABCArizonaFlare', Georgia, serif;
+      --font-body:    'Aeonik', system-ui, sans-serif;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,8 +67,8 @@
 
     body {
       font-family: var(--font-body);
-      background: var(--cream);
-      color: var(--text);
+      background: var(--off-white);
+      color: var(--text-body);
       overflow-x: hidden;
     }
 
@@ -57,7 +92,7 @@
       font-family: var(--font-display);
       font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: 0.4em;
+      letter-spacing: 0.15em;
       color: var(--coral);
       text-transform: uppercase;
     }
@@ -85,11 +120,12 @@
       font-family: var(--font-body);
       font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--bg-dark);
-      background: var(--coral);
+      color: var(--white);
+      background: var(--burgundy);
       padding: 10px 22px;
+      border-radius: 999px;
       text-decoration: none;
       transition: opacity 0.2s, transform 0.2s;
     }
@@ -226,7 +262,7 @@
     .section-eyebrow {
       font-family: var(--font-body);
       font-size: 0.65rem;
-      letter-spacing: 0.4em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       font-weight: 600;
       color: var(--crimson);
@@ -260,7 +296,7 @@
        QUICK START — CHECKLIST
     ===================== */
     #quickstart {
-      background: var(--cream);
+      background: var(--off-white);
     }
 
     .checklist-grid {
@@ -281,6 +317,7 @@
       padding: 24px 28px;
       background: white;
       border-top: 2px solid var(--crimson);
+      border-radius: 12px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -342,9 +379,9 @@
 
     .brand-prose {
       font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: rgba(232, 200, 200, 0.8);
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 233, 216, 0.8);
       line-height: 1.8;
       margin-bottom: 32px;
     }
@@ -510,7 +547,7 @@
        RESOURCES (Downloads / Links)
     ===================== */
     #resources {
-      background: var(--cream);
+      background: var(--off-white);
     }
 
     .resources-grid {
@@ -523,6 +560,7 @@
       background: white;
       padding: 32px 28px;
       border-bottom: 3px solid var(--crimson);
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -591,6 +629,7 @@
     .prompt-card {
       background: var(--cream);
       border-left: 3px solid var(--burgundy);
+      border-radius: 12px;
       padding: 28px 28px;
     }
 
@@ -617,12 +656,13 @@
     .pc-copy-btn {
       font-family: var(--font-body);
       font-size: 0.62rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 600;
       color: var(--crimson);
       background: none;
-      border: 1px solid rgba(184,0,31,0.3);
+      border: 1px solid rgba(164,0,17,0.3);
+      border-radius: 999px;
       padding: 6px 14px;
       cursor: pointer;
       transition: all 0.2s;
@@ -669,7 +709,8 @@
       gap: 14px;
       padding: 20px 24px;
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(240,112,112,0.18);
+      border: 1px solid rgba(255,150,147,0.18);
+      border-radius: 12px;
       text-decoration: none;
       transition: all 0.2s;
     }
@@ -720,7 +761,7 @@
     .fca-left .fca-eyebrow {
       font-family: var(--font-body);
       font-size: 0.62rem;
-      letter-spacing: 0.4em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.55);
       margin-bottom: 8px;
@@ -740,12 +781,13 @@
     .fca-btn {
       font-family: var(--font-body);
       font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--crimson);
       background: white;
       padding: 18px 40px;
+      border-radius: 999px;
       text-decoration: none;
       white-space: nowrap;
       transition: all 0.2s;
@@ -897,12 +939,13 @@
     .pc-copy {
       font-family: var(--font-body);
       font-size: 0.58rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 600;
       color: var(--crimson);
       background: none;
-      border: 1px solid rgba(184,0,31,0.4);
+      border: 1px solid rgba(164,0,17,0.4);
+      border-radius: 999px;
       padding: 4px 10px;
       cursor: pointer;
       transition: all 0.2s;
@@ -913,12 +956,13 @@
     .portal-btn {
       font-family: var(--font-body);
       font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--bg-dark);
-      background: var(--coral);
+      color: var(--white);
+      background: var(--burgundy);
       padding: 18px 36px;
+      border-radius: 999px;
       text-decoration: none;
       white-space: nowrap;
       flex-shrink: 0;
@@ -935,7 +979,7 @@
        PAYOUTS
     ===================== */
     #payouts {
-      background: var(--cream);
+      background: var(--off-white);
     }
 
     .payout-layout {
@@ -1069,6 +1113,7 @@
     .payout-card {
       background: white;
       border-left: 3px solid var(--crimson);
+      border-radius: 12px;
       padding: 24px 24px;
     }
 
