@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IM8 Ambassador Hub — Creator Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --burgundy:   #6b0010;
+      --crimson:    #b8001f;
+      --coral:      #f07070;
+      --blush:      #e8c8c8;
+      --cream:      #f5ede0;
+      --gold:       #c5973b;
+      --white:      #ffffff;
+      --text:       #2a0008;
+      --muted:      #7a5050;
+      --bg-dark:    #1c0006;
+      --bg-mid:     #3d0010;
+      --divider:    rgba(176, 0, 31, 0.15);
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body:    "Jost", system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* =====================
+       NAV
+    ===================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(26, 0, 6, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(240, 112, 112, 0.12);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      color: var(--coral);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 237, 224, 0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--coral); }
+
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bg-dark);
+      background: var(--coral);
+      padding: 10px 22px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+    }
+
+    /* =====================
+       HERO
+    ===================== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(150deg, var(--bg-dark) 0%, #3b0010 45%, var(--burgundy) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 64px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(175deg, var(--crimson) 0%, rgba(107,0,16,0.5) 50%, transparent 80%);
+      clip-path: polygon(22% 0%, 100% 0%, 100% 100%, 0% 100%);
+      opacity: 0.5;
+    }
+
+    .hero-ghost {
+      position: absolute;
+      bottom: -40px;
+      right: 40px;
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 16vw, 18rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: rgba(255, 255, 255, 0.035);
+      pointer-events: none;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--coral);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7.5vw, 7.5rem);
+      font-weight: 700;
+      line-height: 0.9;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      max-width: 800px;
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--coral);
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--coral);
+      opacity: 0.5;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+      font-weight: 300;
+      color: rgba(232, 200, 200, 0.75);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item .sv {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--coral);
+      line-height: 1;
+    }
+
+    .hero-stat-item .sl {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(232,200,200,0.5);
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 0 24px 60px; }
+      .hero-ghost { display: none; }
+    }
+
+    /* =====================
+       SECTION SCAFFOLDING
+    ===================== */
+    section {
+      padding: 100px 64px;
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 24px; }
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--crimson);
+    }
+
+    .section-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--crimson);
+      margin-bottom: 48px;
+      opacity: 0.6;
+    }
+
+    /* =====================
+       QUICK START — CHECKLIST
+    ===================== */
+    #quickstart {
+      background: var(--cream);
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 900px;
+    }
+
+    @media (max-width: 768px) {
+      .checklist-grid { grid-template-columns: 1fr; }
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px 28px;
+      background: white;
+      border-top: 2px solid var(--crimson);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .checklist-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(107,0,16,0.1);
+    }
+
+    .ci-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--crimson);
+      opacity: 0.25;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .ci-body .ci-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .ci-body .ci-desc {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* =====================
+       BRAND STORY BANNER
+    ===================== */
+    .brand-banner {
+      background: linear-gradient(140deg, var(--bg-dark) 0%, var(--bg-mid) 100%);
+      padding: 80px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .brand-banner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 24px;
+      }
+    }
+
+    .brand-banner .section-eyebrow { color: var(--coral); }
+    .brand-banner .section-title { color: var(--cream); }
+    .brand-banner .section-title em { color: var(--coral); }
+    .brand-banner .section-rule { background: var(--coral); }
+
+    .brand-prose {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(232, 200, 200, 0.8);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .brand-pills {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .brand-pills li {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-pills li::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--coral);
+      flex-shrink: 0;
+    }
+
+    .brand-stats-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bstat {
+      background: rgba(184, 0, 31, 0.2);
+      border: 1px solid rgba(240, 112, 112, 0.2);
+      padding: 24px 28px;
+    }
+
+    .bstat-fig {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--coral);
+      line-height: 1;
+    }
+
+    .bstat-label {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(232,200,200,0.55);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+    }
+
+    /* =====================
+       CONTENT ANGLES
+    ===================== */
+    #angles {
+      background: white;
+    }
+
+    .angles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      background: var(--divider);
+      border: 1px solid var(--divider);
+    }
+
+    .angle-card {
+      background: white;
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+
+    .angle-card:hover {
+      background: #fdf6f0;
+    }
+
+    .ac-num {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--crimson);
+      opacity: 0.18;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .ac-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .ac-hook {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.6;
+      border-left: 2px solid var(--coral);
+      padding-left: 12px;
+    }
+
+    /* =====================
+       PROOF STATS
+    ===================== */
+    .proof-strip {
+      background: var(--burgundy);
+      padding: 72px 64px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: linear-gradient(135deg, var(--burgundy) 0%, var(--bg-mid) 100%);
+    }
+
+    @media (max-width: 768px) {
+      .proof-strip { grid-template-columns: 1fr; padding: 48px 24px; }
+    }
+
+    .proof-stat {
+      padding: 40px 36px;
+      border-right: 1px solid rgba(240,112,112,0.15);
+    }
+
+    .proof-stat:last-child { border-right: none; }
+
+    .ps-pct {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .ps-text {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: rgba(232,200,200,0.7);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .ps-source {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(240,112,112,0.45);
+    }
+
+    /* =====================
+       RESOURCES (Downloads / Links)
+    ===================== */
+    #resources {
+      background: var(--cream);
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .resource-card {
+      background: white;
+      padding: 32px 28px;
+      border-bottom: 3px solid var(--crimson);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(107,0,16,0.12);
+    }
+
+    .rc-type {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+    }
+
+    .rc-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .rc-desc {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .rc-arrow {
+      font-size: 1.1rem;
+      color: var(--crimson);
+      margin-top: 4px;
+      transition: transform 0.2s;
+    }
+
+    .resource-card:hover .rc-arrow { transform: translateX(4px); }
+
+    /* =====================
+       AI PROMPTS
+    ===================== */
+    #prompts {
+      background: white;
+    }
+
+    .prompts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .prompts-grid { grid-template-columns: 1fr; }
+    }
+
+    .prompt-card {
+      background: var(--cream);
+      border-left: 3px solid var(--burgundy);
+      padding: 28px 28px;
+    }
+
+    .pc-cat {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .pc-prompt {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .pc-copy-btn {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+      background: none;
+      border: 1px solid rgba(184,0,31,0.3);
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pc-copy-btn:hover {
+      background: var(--crimson);
+      color: white;
+      border-color: var(--crimson);
+    }
+
+    .pc-copy-btn.copied {
+      background: #2a7a3a;
+      color: white;
+      border-color: #2a7a3a;
+    }
+
+    /* =====================
+       KEY LINKS
+    ===================== */
+    #links {
+      background: linear-gradient(160deg, var(--bg-dark) 0%, var(--bg-mid) 100%);
+      padding: 80px 64px;
+    }
+
+    @media (max-width: 768px) {
+      #links { padding: 60px 24px; }
+    }
+
+    #links .section-eyebrow { color: var(--coral); }
+    #links .section-title { color: var(--cream); }
+    #links .section-title em { color: var(--coral); }
+    #links .section-rule { background: var(--coral); }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .link-pill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(240,112,112,0.18);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .link-pill:hover {
+      background: rgba(240,112,112,0.12);
+      border-color: rgba(240,112,112,0.5);
+      transform: translateY(-2px);
+    }
+
+    .lp-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .lp-body .lp-label {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--cream);
+    }
+
+    .lp-body .lp-sub {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      color: rgba(240,112,112,0.55);
+      margin-top: 2px;
+    }
+
+    /* =====================
+       FOOTER CTA
+    ===================== */
+    .footer-cta {
+      background: var(--crimson);
+      padding: 80px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .footer-cta { padding: 60px 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    .fca-left .fca-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 8px;
+    }
+
+    .fca-left .fca-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: white;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+
+    .fca-left .fca-title em { font-style: italic; color: rgba(255,255,255,0.65); }
+
+    .fca-btn {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      background: white;
+      padding: 18px 40px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .fca-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    footer {
+      background: var(--bg-dark);
+      padding: 28px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      color: rgba(240,112,112,0.4);
+    }
+
+    .footer-note {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      color: rgba(232,200,200,0.25);
+      letter-spacing: 0.05em;
+    }
+
+    /* =====================
+       HAMBURGER / MOBILE NAV
+    ===================== */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--cream);
+      transition: all 0.3s;
+    }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 61px; left: 0; right: 0;
+      background: rgba(26,0,6,0.97);
+      backdrop-filter: blur(12px);
+      padding: 28px 24px;
+      flex-direction: column;
+      gap: 22px;
+      z-index: 199;
+      border-bottom: 1px solid rgba(240,112,112,0.12);
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 237, 224, 0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--coral); }
+    .nav-mobile .nav-mobile-cta { color: var(--coral); }
+
+    /* =====================
+       INSIGHT PORTAL
+    ===================== */
+    #portal { background: white; }
+
+    .portal-intro {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+
+    .portal-card {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 100%);
+      padding: 40px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 820px;
+      border-left: 3px solid var(--coral);
+    }
+
+    .portal-creds { display: flex; flex-direction: column; gap: 18px; }
+
+    .portal-cred-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .pc-label {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(240,112,112,0.5);
+      font-weight: 600;
+      width: 72px;
+      flex-shrink: 0;
+    }
+
+    .pc-value {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+    }
+
+    a.pc-value {
+      color: var(--coral);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(240,112,112,0.3);
+      transition: border-color 0.2s;
+    }
+    a.pc-value:hover { border-color: var(--coral); }
+
+    .pc-copy {
+      font-family: var(--font-body);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+      background: none;
+      border: 1px solid rgba(184,0,31,0.4);
+      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pc-copy:hover { background: var(--crimson); color: white; border-color: var(--crimson); }
+    .pc-copy.copied { background: #2a7a3a; color: white; border-color: #2a7a3a; }
+
+    .portal-btn {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bg-dark);
+      background: var(--coral);
+      padding: 18px 36px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .portal-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    @media (max-width: 768px) {
+      .portal-card { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+      .portal-btn { width: 100%; text-align: center; }
+    }
+
+    /* =====================
+       PAYOUTS
+    ===================== */
+    #payouts {
+      background: var(--cream);
+    }
+
+    .payout-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .payout-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .payout-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pt-step {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    .pt-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 32px;
+      bottom: -12px;
+      width: 1px;
+      background: var(--divider);
+    }
+
+    .pt-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--crimson);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pt-dot span {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--crimson);
+    }
+
+    .pt-body {
+      padding-bottom: 32px;
+    }
+
+    .pt-label {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+      margin-bottom: 4px;
+    }
+
+    .pt-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .pt-desc {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .payout-example {
+      background: white;
+      border-top: 3px solid var(--gold);
+      padding: 28px 28px;
+      margin-top: 32px;
+    }
+
+    .pe-label {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .pe-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .pe-row:last-child { border-bottom: none; }
+
+    .pe-month {
+      font-weight: 600;
+      color: var(--text);
+      width: 72px;
+      flex-shrink: 0;
+    }
+
+    .pe-arrow { color: var(--crimson); opacity: 0.4; }
+
+    .payout-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .payout-card {
+      background: white;
+      border-left: 3px solid var(--crimson);
+      padding: 24px 24px;
+    }
+
+    .payout-card.gold-border { border-left-color: var(--gold); }
+
+    .poca-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+      margin-bottom: 8px;
+    }
+
+    .payout-card.gold-border .poca-eyebrow { color: var(--gold); }
+
+    .poca-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .poca-body {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .poca-body a {
+      color: var(--crimson);
+      font-weight: 500;
+    }
+
+    .poca-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* =====================
+       FAQ
+    ===================== */
+    #faq {
+      background: white;
+    }
+
+    .faq-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1000px;
+    }
+
+    @media (max-width: 768px) {
+      .faq-cols { grid-template-columns: 1fr; }
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--divider);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .faq-q:hover { color: var(--crimson); }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      color: var(--crimson);
+      transition: transform 0.25s;
+      margin-top: 3px;
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item.open .faq-a { max-height: 400px; }
+
+    .faq-a-inner {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      padding-bottom: 20px;
+    }
+
+    .faq-a-inner a { color: var(--crimson); font-weight: 500; }
+    .faq-a-inner strong { color: var(--text); font-weight: 600; }
+
+    /* =====================
+       REVEAL ANIMATIONS
+    ===================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.d1 { transition-delay: 0.1s; }
+    .reveal.d2 { transition-delay: 0.2s; }
+    .reveal.d3 { transition-delay: 0.3s; }
+    .reveal.d4 { transition-delay: 0.4s; }
+    .reveal.d5 { transition-delay: 0.5s; }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* =====================
+       HERO LOAD ANIMATIONS
+    ===================== */
+    .hero-eyebrow  { animation: fadeUp 0.8s 0.2s both cubic-bezier(0.16,1,0.3,1); }
+    .hero-title    { animation: fadeUp 0.9s 0.35s both cubic-bezier(0.16,1,0.3,1); }
+    .hero-rule     { animation: fadeUp 0.7s 0.5s both cubic-bezier(0.16,1,0.3,1); }
+    .hero-sub      { animation: fadeUp 0.8s 0.55s both cubic-bezier(0.16,1,0.3,1); }
+    .hero-stats    { animation: fadeUp 0.8s 0.7s both cubic-bezier(0.16,1,0.3,1); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">I·M·8</div>
+    <ul class="nav-links">
+      <li><a href="#links">Links</a></li>
+      <li><a href="#quickstart">Get Started</a></li>
+      <li><a href="#angles">Angles</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#payouts">Payouts</a></li>
+      <li><a href="#portal">Portal</a></li>
+      <li><a href="#prompts">AI Prompts</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://discord.gg/tpzwzpWbvs" class="nav-cta" target="_blank">Join Discord</a>
+    <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile" id="mobileNav">
+    <a href="#links" onclick="closeMobileNav()">Links</a>
+    <a href="#quickstart" onclick="closeMobileNav()">Get Started</a>
+    <a href="#angles" onclick="closeMobileNav()">Angles</a>
+    <a href="#resources" onclick="closeMobileNav()">Resources</a>
+    <a href="#payouts" onclick="closeMobileNav()">Payouts</a>
+    <a href="#portal" onclick="closeMobileNav()">Portal</a>
+    <a href="#prompts" onclick="closeMobileNav()">AI Prompts</a>
+    <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+    <a href="https://discord.gg/tpzwzpWbvs" target="_blank" class="nav-mobile-cta">Join Discord →</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-ghost">I·M·8</div>
+    <p class="hero-eyebrow">IM8 Ambassador Hub · Creator Resources</p>
+    <h1 class="hero-title">From <em>Creator</em><br>to Conversion.</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Everything you need to create content that converts — angles, scripts, AI prompts, B-roll, and brand assets in one place.</p>
+  </header>
+
+  <!-- KEY LINKS — pinned top for quick access -->
+  <section id="links">
+    <p class="section-eyebrow reveal">Key Links</p>
+    <h2 class="section-title reveal d1">Everything<br><em>In One Place</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="links-grid">
+
+      <a href="https://affiliates.socialsnowball.io/auth/affiliate/login" class="link-pill reveal d1" target="_blank">
+        <div class="lp-icon">🔗</div>
+        <div class="lp-body">
+          <div class="lp-label">Social Snowball Portal</div>
+          <div class="lp-sub">Your links & payouts</div>
+        </div>
+      </a>
+
+      <a href="https://discord.gg/tpzwzpWbvs" class="link-pill reveal d2" target="_blank">
+        <div class="lp-icon">💬</div>
+        <div class="lp-body">
+          <div class="lp-label">Ambassador Discord</div>
+          <div class="lp-sub">Weekly briefs & community</div>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1Z8-qtFWtwIH8JWGOFtL5Qh5tQOjfJbFy" class="link-pill reveal d3" target="_blank">
+        <div class="lp-icon">📦</div>
+        <div class="lp-body">
+          <div class="lp-label">Brand Asset Drive</div>
+          <div class="lp-sub">Logos, imagery & guidelines</div>
+        </div>
+      </a>
+
+      <a href="https://insight.im8.digital/reports/top50?account=IM8-USD&sort=avg_hook_rate&days=30" class="link-pill reveal d1" target="_blank">
+        <div class="lp-icon">📊</div>
+        <div class="lp-body">
+          <div class="lp-label">IM8 Insight Portal</div>
+          <div class="lp-sub">Top 50 creators · im8ugc / im8ugc</div>
+        </div>
+      </a>
+
+      <a href="https://im8health.com" class="link-pill reveal d2" target="_blank">
+        <div class="lp-icon">🌐</div>
+        <div class="lp-body">
+          <div class="lp-label">IM8 Website</div>
+          <div class="lp-sub">im8health.com</div>
+        </div>
+      </a>
+
+      <a href="https://strava.app.link/u94yPNhyb2b" class="link-pill reveal d3" target="_blank">
+        <div class="lp-icon">🏃</div>
+        <div class="lp-body">
+          <div class="lp-label">IM8 Strava Club</div>
+          <div class="lp-sub">Join the fitness community</div>
+        </div>
+      </a>
+
+      <a href="mailto:affiliates@im8health.com" class="link-pill reveal d1">
+        <div class="lp-icon">📧</div>
+        <div class="lp-body">
+          <div class="lp-label">Ambassador Support</div>
+          <div class="lp-sub">affiliates@im8health.com</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- QUICK START -->
+  <section id="quickstart">
+    <p class="section-eyebrow reveal">Quick-Start Checklist</p>
+    <h2 class="section-title reveal d1">Post in Your<br><em>First 7 Days</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="checklist-grid">
+
+      <div class="checklist-item reveal d1">
+        <div class="ci-num">01</div>
+        <div class="ci-body">
+          <div class="ci-title">Join the Discord</div>
+          <div class="ci-desc">Your home base. Weekly briefs, trend alerts, and direct access to the IM8 team. Link is in the nav above.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d2">
+        <div class="ci-num">02</div>
+        <div class="ci-body">
+          <div class="ci-title">Get Your Ambassador Link</div>
+          <div class="ci-desc">Log into Social Snowball to access your unique tracking link. Use it in every bio, caption, and Linktree.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d3">
+        <div class="ci-num">03</div>
+        <div class="ci-body">
+          <div class="ci-title">Pick One Angle</div>
+          <div class="ci-desc">Don't start from scratch. Choose one of the 7 Proven Angles below and use the hook template to shoot your first video today.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d4">
+        <div class="ci-num">04</div>
+        <div class="ci-body">
+          <div class="ci-title">Download Brand Assets</div>
+          <div class="ci-desc">Logos, product imagery, and approved usage guidelines. Never use off-brand visuals — it hurts conversion.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d3">
+        <div class="ci-num">05</div>
+        <div class="ci-body">
+          <div class="ci-title">Follow IM8 on Strava</div>
+          <div class="ci-desc">Join our community of athletes and health-focused creators. Great for content inspiration and social proof.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d4">
+        <div class="ci-num">06</div>
+        <div class="ci-body">
+          <div class="ci-title">Post &amp; Tag Us</div>
+          <div class="ci-desc">Use #IM8Health and tag @im8health. Best-performing ambassadors get featured in our newsletter and social channels.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d1" style="border-top-color: var(--gold);">
+        <div class="ci-num" style="color: var(--gold);">07</div>
+        <div class="ci-body">
+          <div class="ci-title">Complete Your Vendor Registration</div>
+          <div class="ci-desc">Do this now — not later. Your payout cannot be processed without it. Takes 2 minutes. See the Payouts section below for the link and full timeline.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PAYOUTS -->
+  <section id="payouts">
+    <p class="section-eyebrow reveal">How You Get Paid</p>
+    <h2 class="section-title reveal d1">Payouts,<br><em>Explained Simply</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="payout-layout">
+
+      <div>
+        <div class="payout-timeline reveal d1">
+          <div class="pt-step">
+            <div class="pt-dot"><span>1</span></div>
+            <div class="pt-body">
+              <div class="pt-label">Month of sale</div>
+              <div class="pt-title">Your code drives a sale</div>
+              <div class="pt-desc">Commission is recorded and shows as <strong>Pending</strong> in your Social Snowball dashboard. This is normal — it doesn't clear immediately.</div>
+            </div>
+          </div>
+          <div class="pt-step">
+            <div class="pt-dot"><span>2</span></div>
+            <div class="pt-body">
+              <div class="pt-label">+30 days</div>
+              <div class="pt-title">Refund window clears</div>
+              <div class="pt-desc">We hold commissions for 30 days to account for returns. Once the window passes, your earnings are confirmed and move to approved.</div>
+            </div>
+          </div>
+          <div class="pt-step">
+            <div class="pt-dot"><span>3</span></div>
+            <div class="pt-body">
+              <div class="pt-label">Invoicing</div>
+              <div class="pt-title">We send your invoice &amp; process payment</div>
+              <div class="pt-desc">Once your balance hits the <strong>$100 USD minimum</strong>, we'll send you an invoice to confirm, then release payment to your nominated account.</div>
+            </div>
+          </div>
+          <div class="pt-step">
+            <div class="pt-dot" style="border-color:var(--gold)"><span style="color:var(--gold)">✓</span></div>
+            <div class="pt-body">
+              <div class="pt-label">Paid</div>
+              <div class="pt-title">Funds arrive via PayPal or bank transfer</div>
+              <div class="pt-desc">Set up your preferred payment method in Social Snowball under <strong>Settings → Payout</strong>. PayPal is fastest for international ambassadors.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="payout-example reveal d2">
+          <div class="pe-label">Example Timeline</div>
+          <div class="pe-row"><span class="pe-month">April</span><span class="pe-arrow">→</span> Sale recorded, commission shows as Pending</div>
+          <div class="pe-row"><span class="pe-month">May</span><span class="pe-arrow">→</span> Full refund window clears</div>
+          <div class="pe-row"><span class="pe-month">June</span><span class="pe-arrow">→</span> Invoice sent, payment processed &amp; released</div>
+        </div>
+      </div>
+
+      <div class="payout-cards">
+        <div class="payout-card reveal d1">
+          <div class="poca-eyebrow">Action Required</div>
+          <div class="poca-title">Complete Your Vendor Registration</div>
+          <div class="poca-body">
+            We cannot process your payout without this. It collects your bank details and tax information — takes 2 minutes. <strong>Do it now, not when you're ready to be paid.</strong>
+            <br><br>
+            <a href="mailto:affiliates@im8health.com?subject=Vendor Registration Form Request">Email us for the form link →</a>
+          </div>
+        </div>
+
+        <div class="payout-card reveal d2">
+          <div class="poca-eyebrow">Minimum Threshold</div>
+          <div class="poca-title">$100 USD to trigger a payout</div>
+          <div class="poca-body">
+            Earnings below $100 roll over to the next month automatically. There's no expiry — your balance accumulates until you hit the threshold.
+          </div>
+        </div>
+
+        <div class="payout-card gold-border reveal d3">
+          <div class="poca-eyebrow">International Ambassadors</div>
+          <div class="poca-title">No W-8BEN required</div>
+          <div class="poca-body">
+            If you're outside the US, you <strong>do not need a W-8BEN form</strong>. That's a US-only tax document. Simply complete the standard vendor registration. Payment is made in <strong>USD</strong> — select USD when completing the form.
+          </div>
+        </div>
+
+        <div class="payout-card reveal d4">
+          <div class="poca-eyebrow">Questions</div>
+          <div class="poca-title">Something doesn't look right?</div>
+          <div class="poca-body">
+            Reply to any email from the affiliate team, or contact <a href="mailto:affiliates@im8health.com">affiliates@im8health.com</a>. Include your ambassador code and Social Snowball email so we can look it up fast.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BRAND STORY BANNER -->
+  <div class="brand-banner">
+    <div>
+      <p class="section-eyebrow">Brand Foundation</p>
+      <h2 class="section-title reveal">The Story<br>That <em>Sells</em></h2>
+      <div class="section-rule reveal d1"></div>
+      <p class="brand-prose reveal d2">
+        IM8 isn't a supplement brand. It's a daily ritual for people who refuse to leave performance to chance. Co-founded by David Beckham — a man who turned a Red Card moment into a career-defining comeback — IM8 embodies the belief that adversity is the fuel for optimal health.
+      </p>
+      <ul class="brand-pills reveal d3">
+        <li>NSF Certified Sport — trusted by professional athletes</li>
+        <li>Vegan, Allergen-free, Gluten-free, No artificial flavors or sweeteners</li>
+        <li>Third-party tested for 280+ banned substances — WADA compliant</li>
+        <li>One sachet, every day — that's the entire protocol</li>
+      </ul>
+    </div>
+    <div class="brand-stats-col">
+      <div class="bstat reveal d1">
+        <div class="bstat-fig">Daily Ultimate Essentials Pro</div>
+        <div class="bstat-label">Flagship · NSF Certified Sport · Powers core creator content</div>
+      </div>
+      <div class="bstat reveal d2">
+        <div class="bstat-fig">Daily Ultimate Longevity</div>
+        <div class="bstat-label">Advanced formula · Targets hallmarks of aging with CRT8™</div>
+      </div>
+      <div class="bstat reveal d3">
+        <div class="bstat-fig">The Beckham Stack</div>
+        <div class="bstat-label">Both products bundled · The complete system · Beckham's daily choice</div>
+      </div>
+      <div class="bstat reveal d4">
+        <div class="bstat-fig">9 Organ Systems</div>
+        <div class="bstat-label">Digestive · Immune · Heart · Muscular · Skeletal · Skin & Hair · Brain · Endocrine · Hydration</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROOF STATS -->
+  <div class="proof-strip">
+    <div class="proof-stat reveal">
+      <div class="ps-pct">700K+</div>
+      <div class="ps-text">customer purchases across the IM8 range worldwide</div>
+      <div class="ps-source">IM8 Health</div>
+    </div>
+    <div class="proof-stat reveal d2">
+      <div class="ps-pct">90+</div>
+      <div class="ps-text">bioavailable nutrients across 9 organ systems in a single daily sachet</div>
+      <div class="ps-source">IM8 Health</div>
+    </div>
+    <div class="proof-stat reveal d3">
+      <div class="ps-pct">280+</div>
+      <div class="ps-text">banned substances tested — NSF Certified Sport & WADA compliant</div>
+      <div class="ps-source">NSF International</div>
+    </div>
+  </div>
+
+  <!-- 7 CONTENT ANGLES -->
+  <section id="angles">
+    <p class="section-eyebrow reveal">The 7 Angles That Convert</p>
+    <h2 class="section-title reveal d1">What to Say<br><em>& How to Say It</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="angles-grid">
+      <div class="angle-card reveal d1">
+        <div class="ac-num">01</div>
+        <div class="ac-name">90-in-1 Simplification</div>
+        <div class="ac-hook">"90+ research-backed ingredients in a single sachet. Buying each one separately would cost you hundreds per month — IM8 costs under $3 a day."</div>
+      </div>
+      <div class="angle-card reveal d2">
+        <div class="ac-num">02</div>
+        <div class="ac-name">30-Day Timeline</div>
+        <div class="ac-hook">"Day 1 vs Day 30: I documented exactly what changed when I committed to one sachet every morning."</div>
+      </div>
+      <div class="angle-card reveal d1">
+        <div class="ac-num">03</div>
+        <div class="ac-name">Skeptic-to-Believer</div>
+        <div class="ac-hook">"I laughed at supplement culture for years. Then I actually looked into the science behind CRT8™."</div>
+      </div>
+      <div class="angle-card reveal d2">
+        <div class="ac-num">04</div>
+        <div class="ac-name">Radical Transparency</div>
+        <div class="ac-hook">"Most brands won't show you this. Here's exactly what's in IM8, why each ingredient is there, and what the research actually says."</div>
+      </div>
+      <div class="angle-card reveal d1">
+        <div class="ac-num">05</div>
+        <div class="ac-name">Cost-Per-Day Reframe</div>
+        <div class="ac-hook">"People spend $8 on a coffee without thinking. IM8 is under $3 a day and it's built on clinical research."</div>
+      </div>
+      <div class="angle-card reveal d2">
+        <div class="ac-num">06</div>
+        <div class="ac-name">Identity & Aspiration</div>
+        <div class="ac-hook">"I'm not a professional athlete. But I refuse to let my health fall behind my ambitions."</div>
+      </div>
+      <div class="angle-card reveal d1">
+        <div class="ac-num">07</div>
+        <div class="ac-name">Social Proof Stacking</div>
+        <div class="ac-hook">"David Beckham doesn't need to sell supplements. He takes IM8 because it works — and so do I."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources">
+    <p class="section-eyebrow reveal">Creator Resources</p>
+    <h2 class="section-title reveal d1">Everything You Need<br><em>to Create Today</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="resources-grid">
+
+      <a href="https://drive.google.com/file/d/1xGmCQJVMzsFnfBPY8RQqTqg1CR2doSd2/view?usp=sharing" class="resource-card reveal d1" target="_blank">
+        <div class="rc-type">Playbook</div>
+        <div class="rc-title">The IM8 Ambassador Content Machine</div>
+        <div class="rc-desc">Full content strategy deck — angles, archetypes, 100-piece content map, weekly workflow. Your master reference.</div>
+        <div class="rc-arrow">→</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1gyRvu4B05oVfGsKuCOpYzY1Vfxjy2ie4" class="resource-card reveal d2" target="_blank">
+        <div class="rc-type">Social Assets</div>
+        <div class="rc-title">Online & Social Media Assets</div>
+        <div class="rc-desc">Ready-to-use graphics, banners, and creative assets sized for Instagram, TikTok, and Stories. Drop in and post.</div>
+        <div class="rc-arrow">→</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1Z8-qtFWtwIH8JWGOFtL5Qh5tQOjfJbFy" class="resource-card reveal d3" target="_blank">
+        <div class="rc-type">Brand Assets</div>
+        <div class="rc-title">Logos, Photography & Usage Guidelines</div>
+        <div class="rc-desc">Official logos, product imagery, colour codes, and do/don't usage examples. Never post off-brand content.</div>
+        <div class="rc-arrow">→</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1qnrZ5HxjdAQWF_nDGRnInRKKqzYuwzH6" class="resource-card reveal d1" target="_blank">
+        <div class="rc-type">Product Images</div>
+        <div class="rc-title">Product Photography Library</div>
+        <div class="rc-desc">High-res shots of DUE, DUL, and the Beckham Stack. Clean, on-brand imagery for your feed, Stories, and video thumbnails.</div>
+        <div class="rc-arrow">→</div>
+      </a>
+
+      <a href="https://docs.google.com/document/d/16UYMmD9OZwJQO77N2YqzEADJEpLXXepA/edit" class="resource-card reveal d2" target="_blank">
+        <div class="rc-type">Captions & Hooks</div>
+        <div class="rc-title">Plug-and-Play Captions & Hooks</div>
+        <div class="rc-desc">Ready-to-use captions for each of the 7 content angles. Copy, personalise, and post in under 3 minutes.</div>
+        <div class="rc-arrow">→</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1JfVOIg830RB_thwkaGIiQ64QNIuOBYbm" class="resource-card reveal d2" target="_blank">
+        <div class="rc-type">Videos</div>
+        <div class="rc-title">Creator Video Library</div>
+        <div class="rc-desc">Product videos, b-roll clips, and brand content to use in your own edits. Everything you need without shooting from scratch.</div>
+        <div class="rc-arrow">→</div>
+      </a>
+
+      <a href="https://discord.gg/tpzwzpWbvs" class="resource-card reveal d3" target="_blank">
+        <div class="rc-type">Community</div>
+        <div class="rc-title">Ambassador Discord — Weekly Briefs & Support</div>
+        <div class="rc-desc">Weekly trend alerts, direct access to the IM8 team, peer Q&amp;A, and exclusive early access to new products.</div>
+        <div class="rc-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- INSIGHT PORTAL -->
+  <section id="portal">
+    <p class="section-eyebrow reveal">IM8 Insight Portal</p>
+    <h2 class="section-title reveal d1">See What's<br><em>Actually Working</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <p class="portal-intro reveal d2">Real-time rankings of the top 50 IM8 creators — sorted by hook rate, engagement, and sales. See which content angles are winning right now and model your strategy on what's already proven.</p>
+    <div class="portal-card reveal d3">
+      <div class="portal-creds">
+        <div class="portal-cred-row">
+          <span class="pc-label">URL</span>
+          <a href="https://insight.im8.digital/" class="pc-value" target="_blank">insight.im8.digital</a>
+        </div>
+        <div class="portal-cred-row">
+          <span class="pc-label">Username</span>
+          <span class="pc-value">im8ugc</span>
+          <button class="pc-copy" onclick="copyText('im8ugc', this)">Copy</button>
+        </div>
+        <div class="portal-cred-row">
+          <span class="pc-label">Password</span>
+          <span class="pc-value">im8ugc</span>
+          <button class="pc-copy" onclick="copyText('im8ugc', this)">Copy</button>
+        </div>
+      </div>
+      <a href="https://insight.im8.digital/reports/top50?account=IM8-USD&sort=avg_hook_rate&days=30" class="portal-btn" target="_blank">Open Portal →</a>
+    </div>
+  </section>
+
+  <!-- AI PROMPTS -->
+  <section id="prompts">
+    <p class="section-eyebrow reveal">AI Prompt Library</p>
+    <h2 class="section-title reveal d1">Let AI Handle<br><em>the Heavy Lifting</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="prompts-grid">
+
+      <div class="prompt-card reveal d1">
+        <div class="pc-cat">Hook Generator</div>
+        <div class="pc-prompt">"Write 10 TikTok hooks for an IM8 Health ambassador using the [skeptic-to-believer / cost reframe / 30-day timeline] angle for a [doctor / athlete / biohacker] audience."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <div class="prompt-card reveal d2">
+        <div class="pc-cat">Caption Writer</div>
+        <div class="pc-prompt">"Write a TikTok caption for a video about [angle]. Include one CTA, two relevant hashtags, and keep it under 80 words. Brand voice: direct, warm, science-backed."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <div class="prompt-card reveal d1">
+        <div class="pc-cat">Script Builder</div>
+        <div class="pc-prompt">"Write a 45-second TikTok script for IM8. Open with this hook: [paste hook]. Include one clinical stat, one personal experience beat, and a soft CTA. No hard sell."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <div class="prompt-card reveal d2">
+        <div class="pc-cat">Objection Handler</div>
+        <div class="pc-prompt">"A viewer commented '[paste objection]' on my IM8 video. Write a response that's helpful, credible, and lightly promotional. Under 50 words."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <p class="section-eyebrow reveal">FAQ</p>
+    <h2 class="section-title reveal d1">Common<br><em>Questions</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="faq-cols">
+
+      <div>
+        <div class="faq-item reveal d1">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            My code isn't working — what do I do?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">First, test your code at <strong>im8health.com/discount/YOURCODE</strong> (replace YOURCODE with yours). If it returns an error, reply to any email from the affiliate team with your code and we'll fix it within 24 hours. Common cause: if your code previously ended in <strong>8</strong> (e.g. NAME8), it was updated to NAME10 when we moved to 10% — check your Social Snowball dashboard for your current code.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d2">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What's the difference between my link and my code?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><strong>Use both.</strong> Your tracking link (<em>im8health.com/discount/YOURCODE</em>) goes in your bio, Linktree, and anywhere clickable — it applies your code automatically and tracks attribution. Your code (e.g. <em>YOURCODE</em>) goes in captions and spoken callouts for people who shop manually. Both track back to you. The cookie lasts <strong>30 days</strong> — so someone who clicks today can convert anytime in the next 30 days and you'll still get credit.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d3">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do I need to disclose that I'm an ambassador?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><strong>Yes, always.</strong> FTC (US), ASA (UK), and equivalent regulators require disclosure on any post where you earn commission. The simplest approach: add <strong>#ad</strong> or <strong>#gifted</strong> to your caption, or say "use my code" verbally in video — that signals a commercial relationship. Don't bury it. Disclosure protects you and keeps your audience's trust intact.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d1">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I get a personal discount on my own orders?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes — your ambassador code works on your own orders too. Apply it at checkout for <strong>10% off</strong>. If you're setting up a subscription, the discount applies to your first order. For ongoing subscription discounts or larger orders, email <a href="mailto:affiliates@im8health.com">affiliates@im8health.com</a> and we'll sort it.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d2">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I post on coupon or deal websites?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Ask us first. Some coupon platforms are approved, others aren't — it depends on the site and how your code is listed. Email <a href="mailto:affiliates@im8health.com">affiliates@im8health.com</a> with the platform name and we'll confirm within 48 hours. Posting without approval risks your code being deactivated.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="faq-item reveal d1">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I promote on multiple platforms?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes — your code and link work across every platform. Instagram, TikTok, YouTube, newsletters, podcasts, blog posts — all tracked. Use the same tracking link everywhere so attribution is consistent. If you want platform-specific UTM links for your own analytics, email us and we can set those up.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d2">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I promote other supplement brands at the same time?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">There's no blanket exclusivity requirement for standard ambassadors. That said, posting competitor all-in-one supplement products alongside IM8 content directly reduces conversion — your audience will compare and choose. If you're a higher-tier or contracted partner, check your specific agreement. When in doubt, email us.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d3">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I get free product samples?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">There's no open sample program. However, after your <strong>first 3 confirmed sales</strong>, product rewards unlock — you'll hear from us. High-performing ambassadors with strong engagement are also considered for gifting. Keep posting, tag us, and use <strong>#IM8Health</strong> so we can track your content.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d1">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            My commissions are Pending — is something wrong?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Nothing is wrong. <strong>Pending</strong> is the normal state for all new commissions — it means the sale is confirmed but the 30-day refund window hasn't closed yet. Once it clears, your balance moves to Approved and counts toward the $100 minimum payout threshold. See the Payouts section above for the full timeline.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal d2">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            I've earned over $100 — why haven't I been paid?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Two most common reasons: (1) <strong>Vendor registration not completed</strong> — we can't release payment without your bank/PayPal details on file. Email <a href="mailto:affiliates@im8health.com">affiliates@im8health.com</a> to get the form. (2) <strong>30-day window still clearing</strong> — check the Payouts timeline above to confirm your sale month has fully cleared. If both are done and payment hasn't arrived, email us with your Social Snowball email and ambassador code.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <div class="fca-left">
+      <div class="fca-eyebrow">Ready to start?</div>
+      <div class="fca-title">Start Creating.<br><em>Start Converting.</em></div>
+    </div>
+    <a href="https://discord.gg/tpzwzpWbvs" class="fca-btn" target="_blank">Join the Discord →</a>
+  </div>
+
+  <footer>
+    <div class="footer-brand">I·M·8 Health</div>
+    <div class="footer-note">Made for loving life, backed by science. · Ambassador Resource Hub</div>
+  </footer>
+
+  <script>
+    // Intersection Observer for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile nav
+    function toggleMobileNav() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+    function closeMobileNav() {
+      document.getElementById('mobileNav').classList.remove('open');
+    }
+
+    // Copy credential text
+    function copyText(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open', !isOpen);
+    }
+
+    // Copy prompt buttons
+    function copyPrompt(btn) {
+      const card = btn.closest('.prompt-card');
+      const promptText = card.querySelector('.pc-prompt').textContent;
+      navigator.clipboard.writeText(promptText).then(() => {
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy Prompt';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
