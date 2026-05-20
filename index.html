@@ -751,6 +751,95 @@
     }
 
     /* =====================
+       DIRECT PRODUCT LINKS
+    ===================== */
+    .direct-links-block {
+      margin-top: 40px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,150,147,0.18);
+      border-radius: 16px;
+      padding: 28px 32px;
+    }
+
+    .direct-links-block h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--cream);
+      margin: 0 0 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .direct-links-block .dl-desc {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: rgba(240,112,112,0.65);
+      margin: 0 0 20px;
+    }
+
+    .dl-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,150,147,0.1);
+    }
+
+    .dl-item:first-of-type { border-top: none; }
+
+    .dl-left { flex: 1; min-width: 0; }
+
+    .dl-product {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .dl-url {
+      font-family: monospace;
+      font-size: 0.6rem;
+      color: rgba(240,112,112,0.7);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      display: block;
+    }
+
+    .dl-copy {
+      flex-shrink: 0;
+      background: rgba(255,150,147,0.12);
+      border: 1px solid rgba(255,150,147,0.3);
+      border-radius: 8px;
+      color: var(--coral);
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .dl-copy:hover {
+      background: rgba(255,150,147,0.22);
+      border-color: rgba(255,150,147,0.6);
+    }
+
+    .dl-copy.copied {
+      color: #7ddc9a;
+      border-color: rgba(125,220,154,0.4);
+      background: rgba(125,220,154,0.08);
+    }
+
+    @media (max-width: 600px) {
+      .direct-links-block { padding: 20px 18px; }
+      .dl-url { font-size: 0.55rem; }
+    }
+
+    /* =====================
        FOOTER CTA
     ===================== */
     .footer-cta {
@@ -1701,6 +1790,36 @@
       </a>
 
     </div>
+
+    <div class="direct-links-block reveal d2">
+      <h3>Direct Product Links</h3>
+      <p class="dl-desc">Replace YOURCODE with your code from Social Snowball. These links apply your discount and take customers straight to the subscription checkout.</p>
+
+      <div class="dl-item">
+        <div class="dl-left">
+          <div class="dl-product">Essentials Pro</div>
+          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/essentials-pro?selling_plan=2948432039</span>
+        </div>
+        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/essentials-pro?selling_plan=2948432039')">Copy</button>
+      </div>
+
+      <div class="dl-item">
+        <div class="dl-left">
+          <div class="dl-product">Longevity</div>
+          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/longevity?selling_plan=2948432039</span>
+        </div>
+        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/longevity?selling_plan=2948432039')">Copy</button>
+      </div>
+
+      <div class="dl-item">
+        <div class="dl-left">
+          <div class="dl-product">Beckham Stack</div>
+          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/the-beckham-stack-pro?selling_plan=2948432039</span>
+        </div>
+        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/the-beckham-stack-pro?selling_plan=2948432039')">Copy</button>
+      </div>
+    </div>
+
   </section>
 
   <!-- INSIGHT PORTAL -->
@@ -1910,6 +2029,18 @@
     }
     function closeMobileNav() {
       document.getElementById('mobileNav').classList.remove('open');
+    }
+
+    // Copy direct product link
+    function copyLink(btn, url) {
+      navigator.clipboard.writeText(url).then(() => {
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
     }
 
     // Copy credential text
