@@ -755,16 +755,17 @@
     ===================== */
     .direct-links-block {
       margin-top: 40px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,150,147,0.18);
+      background: #fff;
+      border: 1px solid rgba(164,0,17,0.15);
       border-radius: 16px;
       padding: 28px 32px;
+      box-shadow: 0 2px 12px rgba(80,0,11,0.06);
     }
 
     .direct-links-block h3 {
       font-family: var(--font-display);
       font-size: 1rem;
-      color: var(--cream);
+      color: var(--burgundy);
       margin: 0 0 6px;
       letter-spacing: 0.02em;
     }
@@ -772,7 +773,7 @@
     .direct-links-block .dl-desc {
       font-family: var(--font-body);
       font-size: 0.7rem;
-      color: rgba(240,112,112,0.65);
+      color: #888;
       margin: 0 0 20px;
     }
 
@@ -782,7 +783,7 @@
       justify-content: space-between;
       gap: 12px;
       padding: 12px 0;
-      border-top: 1px solid rgba(255,150,147,0.1);
+      border-top: 1px solid rgba(164,0,17,0.08);
     }
 
     .dl-item:first-of-type { border-top: none; }
@@ -793,14 +794,14 @@
       font-family: var(--font-body);
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--cream);
+      color: var(--crimson);
       margin-bottom: 4px;
     }
 
     .dl-url {
       font-family: monospace;
       font-size: 0.6rem;
-      color: rgba(240,112,112,0.7);
+      color: #888;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -810,10 +811,10 @@
 
     .dl-copy {
       flex-shrink: 0;
-      background: rgba(255,150,147,0.12);
-      border: 1px solid rgba(255,150,147,0.3);
+      background: var(--crimson);
+      border: none;
       border-radius: 8px;
-      color: var(--coral);
+      color: #fff;
       font-family: var(--font-body);
       font-size: 0.62rem;
       font-weight: 600;
@@ -824,14 +825,11 @@
     }
 
     .dl-copy:hover {
-      background: rgba(255,150,147,0.22);
-      border-color: rgba(255,150,147,0.6);
+      background: var(--burgundy);
     }
 
     .dl-copy.copied {
-      color: #7ddc9a;
-      border-color: rgba(125,220,154,0.4);
-      background: rgba(125,220,154,0.08);
+      background: #2a9d5c;
     }
 
     @media (max-width: 600px) {
@@ -1471,35 +1469,6 @@
 
     </div>
 
-    <div class="direct-links-block reveal d2">
-      <h3>Direct Product Links</h3>
-      <p class="dl-desc">Replace YOURCODE with your code from Social Snowball. These links apply your discount and take customers straight to the subscription checkout.</p>
-
-      <div class="dl-item">
-        <div class="dl-left">
-          <div class="dl-product">Essentials Pro</div>
-          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/essentials-pro?selling_plan=2948432039</span>
-        </div>
-        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/essentials-pro?selling_plan=2948432039')">Copy</button>
-      </div>
-
-      <div class="dl-item">
-        <div class="dl-left">
-          <div class="dl-product">Longevity</div>
-          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/longevity?selling_plan=2948432039</span>
-        </div>
-        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/longevity?selling_plan=2948432039')">Copy</button>
-      </div>
-
-      <div class="dl-item">
-        <div class="dl-left">
-          <div class="dl-product">Beckham Stack</div>
-          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/the-beckham-stack-pro?selling_plan=2948432039</span>
-        </div>
-        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/the-beckham-stack-pro?selling_plan=2948432039')">Copy</button>
-      </div>
-    </div>
-
   </section>
 
   <!-- QUICK START -->
@@ -1848,6 +1817,36 @@
       </div>
       <a href="https://insight.im8.digital/reports/top50?account=IM8-USD&sort=avg_hook_rate&days=30" class="portal-btn" target="_blank">Open Portal →</a>
     </div>
+
+    <div class="direct-links-block reveal d2">
+      <h3>Direct Product Links</h3>
+      <p class="dl-desc">Replace YOURCODE with your code from Social Snowball. These links apply your discount and take customers straight to the subscription checkout.</p>
+
+      <div class="dl-item">
+        <div class="dl-left">
+          <div class="dl-product">Essentials Pro</div>
+          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/essentials-pro?selling_plan=2948432039</span>
+        </div>
+        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/essentials-pro?selling_plan=2948432039')">Copy</button>
+      </div>
+
+      <div class="dl-item">
+        <div class="dl-left">
+          <div class="dl-product">Longevity</div>
+          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/longevity?selling_plan=2948432039</span>
+        </div>
+        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/longevity?selling_plan=2948432039')">Copy</button>
+      </div>
+
+      <div class="dl-item">
+        <div class="dl-left">
+          <div class="dl-product">Beckham Stack</div>
+          <span class="dl-url">https://im8health.com/discount/YOURCODE?redirect=/products/the-beckham-stack-pro?selling_plan=2948432039</span>
+        </div>
+        <button class="dl-copy" onclick="copyLink(this, 'https://im8health.com/discount/YOURCODE?redirect=/products/the-beckham-stack-pro?selling_plan=2948432039')">Copy</button>
+      </div>
+    </div>
+
   </section>
 
   <!-- AI PROMPTS -->
