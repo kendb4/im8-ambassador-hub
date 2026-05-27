@@ -1254,6 +1254,209 @@
     }
 
     /* =====================
+       REWARDS / FREE PRODUCT
+    ===================== */
+    #rewards { background: white; }
+
+    .rewards-sub {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 44px;
+    }
+
+    .welcome-code-banner {
+      background: linear-gradient(135deg, #fdf8f0 0%, #fff8ed 100%);
+      border: 1.5px solid var(--gold);
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+
+    .wcb-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .wcb-message {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .wcb-sub {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .wcb-code-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .wcb-code {
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      background: rgba(197,151,59,0.1);
+      border: 1.5px solid rgba(197,151,59,0.3);
+      border-radius: 10px;
+      padding: 10px 20px;
+    }
+
+    .wcb-copy {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: none;
+      border: 1.5px solid var(--gold);
+      border-radius: 999px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .wcb-copy:hover { background: var(--gold); color: white; }
+    .wcb-copy.copied { background: #2a7a3a; color: white; border-color: #2a7a3a; }
+
+    .rewards-tracks-label {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+      margin-bottom: 20px;
+    }
+
+    .rewards-tracks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .rewards-tracks { grid-template-columns: 1fr; }
+      .welcome-code-banner { flex-direction: column; align-items: flex-start; }
+      .wcb-code-wrap { flex-wrap: wrap; }
+    }
+
+    .reward-track {
+      background: var(--off-white);
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .rt-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--crimson);
+    }
+
+    .rt-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .rt-desc {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .rt-milestones {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 1;
+    }
+
+    .rt-milestone {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-top: 1px solid var(--divider);
+    }
+
+    .rt-milestone:first-child { border-top: none; }
+
+    .rtm-trigger {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--crimson);
+      background: rgba(164,0,17,0.08);
+      border-radius: 6px;
+      padding: 3px 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .rtm-reward {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    .rt-cta {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+      transition: gap 0.2s;
+    }
+
+    .rt-cta:hover { gap: 8px; }
+
+    /* =====================
        FAQ
     ===================== */
     #faq {
@@ -1371,6 +1574,7 @@
     <ul class="nav-links">
       <li><a href="#links">Links</a></li>
       <li><a href="#quickstart">Get Started</a></li>
+      <li><a href="#rewards">Rewards</a></li>
       <li><a href="#angles">Angles</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="#payouts">Payouts</a></li>
@@ -1386,6 +1590,7 @@
   <div class="nav-mobile" id="mobileNav">
     <a href="#links" onclick="closeMobileNav()">Links</a>
     <a href="#quickstart" onclick="closeMobileNav()">Get Started</a>
+    <a href="#rewards" onclick="closeMobileNav()">Rewards</a>
     <a href="#angles" onclick="closeMobileNav()">Angles</a>
     <a href="#resources" onclick="closeMobileNav()">Resources</a>
     <a href="#payouts" onclick="closeMobileNav()">Payouts</a>
@@ -1532,6 +1737,90 @@
           <div class="ci-title">Set Up Your Payout Method</div>
           <div class="ci-desc">Log into your Social Snowball portal → Payout Methods → add your PayPal or preferred method. Do it now — your payout can't be sent until this is saved.</div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REWARDS / FREE PRODUCT -->
+  <section id="rewards">
+    <p class="section-eyebrow reveal">Your Perks</p>
+    <h2 class="section-title reveal d1">Free Product,<br><em>Earned — Not Given</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <p class="rewards-sub reveal d3">Product isn't shipped automatically when you join — it's tied to actions and sales milestones. Here's what you can earn and how to claim it.</p>
+
+    <div class="welcome-code-banner reveal d2">
+      <div>
+        <div class="wcb-eyebrow">Use this now</div>
+        <div class="wcb-message">10% off your first IM8 order</div>
+        <div class="wcb-sub">Haven't driven a sale yet? No problem — use <strong>WELCOME10</strong> at checkout to try the product at a discount while you ramp up.</div>
+      </div>
+      <div class="wcb-code-wrap">
+        <div class="wcb-code">WELCOME10</div>
+        <button class="wcb-copy" onclick="copyWelcomeCode(this)">Copy code</button>
+      </div>
+    </div>
+
+    <p class="rewards-tracks-label reveal">Three ways to earn free product</p>
+    <div class="rewards-tracks">
+
+      <div class="reward-track reveal d1">
+        <div class="rt-eyebrow">Do This Today</div>
+        <div class="rt-title">Activation Reward</div>
+        <div class="rt-desc">Complete three steps and we'll ship you a sampler — no sales required. The fastest way to get product in hand.</div>
+        <div class="rt-milestones">
+          <div class="rt-milestone">
+            <span class="rtm-trigger">Step 1</span>
+            <span class="rtm-reward">Join the Ambassador Discord and post an intro</span>
+          </div>
+          <div class="rt-milestone">
+            <span class="rtm-trigger">Step 2</span>
+            <span class="rtm-reward">Join the IM8 Strava club and log a workout or post</span>
+          </div>
+          <div class="rt-milestone">
+            <span class="rtm-trigger">Reward</span>
+            <span class="rtm-reward"><strong>7-day supply + Red Signature Cup</strong> shipped once verified</span>
+          </div>
+        </div>
+        <a href="https://forms.gle/hfNbyjGx1DWYsmvK6" class="rt-cta" target="_blank">Submit activation form →</a>
+      </div>
+
+      <div class="reward-track reveal d2">
+        <div class="rt-eyebrow">Lifetime Sales</div>
+        <div class="rt-title">Milestone Rewards</div>
+        <div class="rt-desc">Every time your all-time sales hit a new threshold, we ship you a reward. These are cumulative — once you cross them, they're yours.</div>
+        <div class="rt-milestones">
+          <div class="rt-milestone">
+            <span class="rtm-trigger">3rd sale</span>
+            <span class="rtm-reward">3× 7-ct sample packs + Silver Frother</span>
+          </div>
+          <div class="rt-milestone">
+            <span class="rtm-trigger">10th sale</span>
+            <span class="rtm-reward">30-day supply + IM8 hat</span>
+          </div>
+        </div>
+        <a href="https://forms.gle/3TKTCjTg8e3bb7ScA" class="rt-cta" target="_blank">Claim milestone reward →</a>
+      </div>
+
+      <div class="reward-track reveal d3">
+        <div class="rt-eyebrow">Monthly Performance</div>
+        <div class="rt-title">Monthly Supply Tiers</div>
+        <div class="rt-desc">Hit these targets in any calendar month and we'll send free product for that month. Resets each month — you can earn this repeatedly.</div>
+        <div class="rt-milestones">
+          <div class="rt-milestone">
+            <span class="rtm-trigger">5 sales / mo</span>
+            <span class="rtm-reward">Free monthly supply of Daily Essentials (your choice of flavour)</span>
+          </div>
+          <div class="rt-milestone">
+            <span class="rtm-trigger">15 sales / mo</span>
+            <span class="rtm-reward">Free Essentials + Longevity monthly supply</span>
+          </div>
+          <div class="rt-milestone">
+            <span class="rtm-trigger">30 sales / mo</span>
+            <span class="rtm-reward">Full Beckham Stack — 3-month quarterly supply (your choice of flavour)</span>
+          </div>
+        </div>
+        <a href="mailto:affiliates@im8health.com" class="rt-cta">Claim monthly tier reward →</a>
       </div>
 
     </div>
@@ -2071,6 +2360,17 @@
         btn.classList.add('copied');
         setTimeout(() => {
           btn.textContent = 'Copy Prompt';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    function copyWelcomeCode(btn) {
+      navigator.clipboard.writeText('WELCOME10').then(() => {
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy code';
           btn.classList.remove('copied');
         }, 2000);
       });
