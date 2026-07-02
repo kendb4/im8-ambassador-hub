@@ -1596,15 +1596,13 @@
   <nav>
     <div class="nav-logo">I·M·8</div>
     <ul class="nav-links">
-      <li><a href="#links">Links</a></li>
+      <li><a href="#story">Product</a></li>
+      <li><a href="#rewards">Earn</a></li>
       <li><a href="#quickstart">Get Started</a></li>
-      <li><a href="#rewards">Rewards</a></li>
       <li><a href="#angles">Angles</a></li>
       <li><a href="creator-briefs.html">Briefs</a></li>
       <li><a href="#resources">Resources</a></li>
-      <li><a href="#payouts">Payouts</a></li>
       <li><a href="#portal">Portal</a></li>
-      <li><a href="#prompts">AI Prompts</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="https://discord.gg/tpzwzpWbvs" class="nav-cta" target="_blank">Join Discord</a>
@@ -1613,15 +1611,13 @@
     </button>
   </nav>
   <div class="nav-mobile" id="mobileNav">
-    <a href="#links" onclick="closeMobileNav()">Links</a>
+    <a href="#story" onclick="closeMobileNav()">Product</a>
+    <a href="#rewards" onclick="closeMobileNav()">Earn</a>
     <a href="#quickstart" onclick="closeMobileNav()">Get Started</a>
-    <a href="#rewards" onclick="closeMobileNav()">Rewards</a>
     <a href="#angles" onclick="closeMobileNav()">Angles</a>
     <a href="creator-briefs.html" onclick="closeMobileNav()">Briefs</a>
     <a href="#resources" onclick="closeMobileNav()">Resources</a>
-    <a href="#payouts" onclick="closeMobileNav()">Payouts</a>
     <a href="#portal" onclick="closeMobileNav()">Portal</a>
-    <a href="#prompts" onclick="closeMobileNav()">AI Prompts</a>
     <a href="#faq" onclick="closeMobileNav()">FAQ</a>
     <a href="https://discord.gg/tpzwzpWbvs" target="_blank" class="nav-mobile-cta">Join Discord →</a>
   </div>
@@ -1632,148 +1628,545 @@
     <p class="hero-eyebrow">IM8 Ambassador Hub · Creator Resources</p>
     <h1 class="hero-title">From <em>Creator</em><br>to Conversion.</h1>
     <div class="hero-rule"></div>
+    <p class="hero-premise">Post content. Share your code. Earn 10% on every sale.</p>
     <p class="hero-sub">Everything you need to create content that converts — angles, scripts, AI prompts, B-roll, and brand assets in one place.</p>
   </header>
 
-  <!-- KEY LINKS — pinned top for quick access -->
-  <section id="links">
-    <p class="section-eyebrow reveal">Key Links</p>
-    <h2 class="section-title reveal d1">Everything<br><em>In One Place</em></h2>
+
+  <!-- WHAT YOU'RE SELLING — rebuilt with real social proof -->
+  <style>
+    /* ── HERO PREMISE TAG ───────────────────────────── */
+    .hero-premise {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--coral);
+      background: rgba(255,150,147,0.1);
+      border: 1px solid rgba(255,150,147,0.22);
+      padding: 7px 18px;
+      margin-bottom: 18px;
+    }
+
+    /* ── STORY SECTION ──────────────────────────────── */
+    #story {
+      background: linear-gradient(155deg, #3a0009 0%, #50000B 45%, #2d0007 100%);
+      padding: 80px 64px;
+    }
+    @media (max-width: 768px) { #story { padding: 56px 24px; } }
+
+    #story .section-eyebrow { color: var(--coral); }
+    #story .section-title   { color: var(--cream); }
+    #story .section-title em { color: var(--coral); }
+    #story .section-rule    { background: var(--coral); }
+
+    /* ── INTRO TWO-COL ──────────────────────────────── */
+    .story-intro {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 960px) {
+      .story-intro { grid-template-columns: 1fr; gap: 36px; }
+      .story-intro-img { order: -1; max-height: 260px; }
+    }
+
+    .story-prose {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(255,233,216,0.82);
+      line-height: 1.85;
+      margin: 0 0 28px;
+    }
+
+    .story-intro-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid rgba(240,112,112,0.15);
+    }
+
+    .story-certs {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+    }
+    .story-certs li {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--cream);
+      background: rgba(240,112,112,0.1);
+      border: 1px solid rgba(240,112,112,0.22);
+      padding: 5px 12px;
+    }
+
+    /* ── BIG STATS ──────────────────────────────────── */
+    .story-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 880px) { .story-stats { grid-template-columns: repeat(2,1fr); } }
+
+    .story-stat {
+      padding: 30px 24px;
+      background: rgba(80,0,11,0.5);
+      border: 1px solid rgba(240,112,112,0.1);
+    }
+    .story-stat__num {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--coral);
+      line-height: 1;
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .story-stat__label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: rgba(232,200,200,0.55);
+      line-height: 1.45;
+    }
+
+    /* ── CLINICAL TRIAL ─────────────────────────────── */
+    .story-trial {
+      margin-bottom: 56px;
+      padding: 32px 36px;
+      background: rgba(164,0,17,0.18);
+      border-left: 3px solid var(--coral);
+    }
+    @media (max-width: 600px) { .story-trial { padding: 24px 20px; } }
+
+    .story-trial__label {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin: 0 0 24px;
+    }
+    .story-trial__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 660px) { .story-trial__grid { grid-template-columns: repeat(2,1fr); } }
+
+    .story-trial__pct {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--coral);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .story-trial__text {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(232,200,200,0.65);
+      line-height: 1.45;
+      margin-top: 6px;
+    }
+
+    /* ── AMBASSADORS ────────────────────────────────── */
+    .story-section-label {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin: 0 0 18px;
+    }
+    .story-amb-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 860px) { .story-amb-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 500px) { .story-amb-grid { grid-template-columns: 1fr; } }
+
+    .story-amb-card {
+      background: rgba(60,0,9,0.6);
+      border: 1px solid rgba(240,112,112,0.1);
+      overflow: hidden;
+    }
+    .story-amb-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .story-amb-body { padding: 20px 20px 22px; }
+    .story-amb-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    .story-amb-role {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      color: var(--coral);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .story-amb-quote {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-style: italic;
+      color: rgba(232,200,200,0.6);
+      line-height: 1.5;
+      border-left: 2px solid rgba(240,112,112,0.25);
+      padding-left: 10px;
+    }
+    .story-amb-more {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: rgba(232,200,200,0.35);
+      letter-spacing: 0.04em;
+      margin: 0 0 56px;
+    }
+
+    /* ── ADVISORY BOARD ─────────────────────────────── */
+    .story-board-title {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 500;
+      color: rgba(255,233,216,0.65);
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
+    .story-board-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 900px) { .story-board-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 540px) { .story-board-grid { grid-template-columns: repeat(2,1fr); } }
+
+    .story-board-card {
+      background: rgba(60,0,9,0.5);
+      border: 1px solid rgba(240,112,112,0.08);
+      padding: 18px 16px;
+    }
+    .sbc-name {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .sbc-role {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      color: rgba(232,200,200,0.45);
+      line-height: 1.4;
+    }
+
+    /* ── CLINICIAN QUOTE ────────────────────────────── */
+    .story-clin-quote {
+      margin: 0 0 44px;
+      padding: 36px 44px;
+      background: rgba(164,0,17,0.14);
+      border-top: 1px solid rgba(240,112,112,0.18);
+      border-bottom: 1px solid rgba(240,112,112,0.18);
+    }
+    @media (max-width: 600px) { .story-clin-quote { padding: 24px 20px; } }
+    .story-clin-quote blockquote { margin: 0; }
+    .story-clin-quote blockquote p {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.55;
+      margin: 0 0 14px;
+      font-style: italic;
+    }
+    .story-clin-quote blockquote cite {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      color: var(--coral);
+      letter-spacing: 0.07em;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+
+    /* ── PRESS ──────────────────────────────────────── */
+    .story-press {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .story-press-label {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232,200,200,0.3);
+      flex-shrink: 0;
+      margin: 0;
+    }
+    .story-press-logos {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .story-press-logos span {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(232,200,200,0.22);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── OXFORD CALLOUT ─────────────────────────────── */
+    .story-oxford {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 22px;
+      background: rgba(197,151,59,0.08);
+      border: 1px solid rgba(197,151,59,0.18);
+      border-left: 3px solid var(--gold);
+    }
+    .story-oxford-badge {
+      font-family: var(--font-body);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      flex-shrink: 0;
+      padding-top: 2px;
+      margin: 0;
+    }
+    .story-oxford-text {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: rgba(197,151,59,0.7);
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+
+  <section id="story">
+    <p class="section-eyebrow reveal">What You're Selling</p>
+    <h2 class="section-title reveal d1">The Story<br>That <em>Sells</em></h2>
     <div class="section-rule reveal d2"></div>
-    <div class="links-grid">
 
-      <a href="https://affiliates.socialsnowball.io/auth/affiliate/login" class="link-pill reveal d1" target="_blank">
-        <div class="lp-icon">🔗</div>
-        <div class="lp-body">
-          <div class="lp-label">Social Snowball Portal</div>
-          <div class="lp-sub">Your links & payouts</div>
-        </div>
-      </a>
-
-      <a href="https://discord.gg/tpzwzpWbvs" class="link-pill reveal d2" target="_blank">
-        <div class="lp-icon">💬</div>
-        <div class="lp-body">
-          <div class="lp-label">Ambassador Discord</div>
-          <div class="lp-sub">Weekly briefs & community</div>
-        </div>
-      </a>
-
-      <a href="https://drive.google.com/drive/folders/1Z8-qtFWtwIH8JWGOFtL5Qh5tQOjfJbFy" class="link-pill reveal d3" target="_blank">
-        <div class="lp-icon">📦</div>
-        <div class="lp-body">
-          <div class="lp-label">Brand Asset Drive</div>
-          <div class="lp-sub">Logos, imagery & guidelines</div>
-        </div>
-      </a>
-
-      <a href="https://insight.im8.digital/reports/top50?account=IM8-USD&sort=avg_hook_rate&days=30" class="link-pill reveal d1" target="_blank">
-        <div class="lp-icon">📊</div>
-        <div class="lp-body">
-          <div class="lp-label">IM8 Insight Portal</div>
-          <div class="lp-sub">Top 50 creators · im8ugc / im8ugc</div>
-        </div>
-      </a>
-
-      <a href="https://im8health.com" class="link-pill reveal d2" target="_blank">
-        <div class="lp-icon">🌐</div>
-        <div class="lp-body">
-          <div class="lp-label">IM8 Website</div>
-          <div class="lp-sub">im8health.com</div>
-        </div>
-      </a>
-
-      <a href="https://strava.app.link/u94yPNhyb2b" class="link-pill reveal d3" target="_blank">
-        <div class="lp-icon">🏃</div>
-        <div class="lp-body">
-          <div class="lp-label">IM8 Strava Club</div>
-          <div class="lp-sub">Join the fitness community</div>
-        </div>
-      </a>
-
-      <a href="mailto:affiliates@im8health.com" class="link-pill reveal d1">
-        <div class="lp-icon">📧</div>
-        <div class="lp-body">
-          <div class="lp-label">Ambassador Support</div>
-          <div class="lp-sub">affiliates@im8health.com</div>
-        </div>
-      </a>
-
-      <a href="creator-briefs.html" class="link-pill reveal d2">
-        <div class="lp-icon">🎬</div>
-        <div class="lp-body">
-          <div class="lp-label">Creator Briefs</div>
-          <div class="lp-sub">190 ready-to-film content briefs</div>
-        </div>
-      </a>
-
+    <!-- Intro: manifesto + product image -->
+    <div class="story-intro reveal d3">
+      <div>
+        <p class="story-prose">
+          IM8 isn't a supplement brand. It's a daily ritual for people who refuse to leave performance to chance. Co-founded by David Beckham — a man who turned a Red Card moment into a career-defining comeback — IM8 embodies the belief that adversity is the fuel for optimal health.
+        </p>
+        <ul class="story-certs">
+          <li>NSF Certified Sport</li>
+          <li>Vegan &amp; Allergen-Free</li>
+          <li>Gluten-Free</li>
+          <li>No Artificial Flavors</li>
+          <li>280+ Banned Substances Tested</li>
+          <li>WADA Compliant</li>
+          <li>One sachet, every day</li>
+        </ul>
+      </div>
+      <img src="https://im8health.com/cdn/shop/files/press_product_1.jpg?v=1779273172&width=700" class="story-intro-img" alt="IM8 Daily Ultimate Essentials — product photography" loading="lazy" />
     </div>
 
-  </section>
-
-  <!-- QUICK START -->
-  <section id="quickstart">
-    <p class="section-eyebrow reveal">Quick-Start Checklist</p>
-    <h2 class="section-title reveal d1">Post in Your<br><em>First 7 Days</em></h2>
-    <div class="section-rule reveal d2"></div>
-    <div class="checklist-grid">
-
-      <div class="checklist-item reveal d1">
-        <div class="ci-num">01</div>
-        <div class="ci-body">
-          <div class="ci-title">Join the Discord</div>
-          <div class="ci-desc">Your home base. Weekly briefs, trend alerts, and direct access to the IM8 team. Link is in the nav above.</div>
-        </div>
+    <!-- Big numbers -->
+    <div class="story-stats reveal d1">
+      <div class="story-stat">
+        <div class="story-stat__num">48M+</div>
+        <div class="story-stat__label">servings delivered worldwide</div>
       </div>
-
-      <div class="checklist-item reveal d2">
-        <div class="ci-num">02</div>
-        <div class="ci-body">
-          <div class="ci-title">Get Your Ambassador Link</div>
-          <div class="ci-desc">Log into Social Snowball to access your unique tracking link. Use it in every bio, caption, and Linktree.</div>
-        </div>
+      <div class="story-stat">
+        <div class="story-stat__num">760K+</div>
+        <div class="story-stat__label">customers globally</div>
       </div>
-
-      <div class="checklist-item reveal d3">
-        <div class="ci-num">03</div>
-        <div class="ci-body">
-          <div class="ci-title">Pick One Angle</div>
-          <div class="ci-desc">Don't start from scratch. Choose one of the 7 Proven Angles below and use the hook template to shoot your first video today.</div>
-        </div>
+      <div class="story-stat">
+        <div class="story-stat__num">4.8★</div>
+        <div class="story-stat__label">from 16,255 verified reviews</div>
       </div>
-
-      <div class="checklist-item reveal d4">
-        <div class="ci-num">04</div>
-        <div class="ci-body">
-          <div class="ci-title">Download Brand Assets</div>
-          <div class="ci-desc">Logos, product imagery, and approved usage guidelines. Never use off-brand visuals — it hurts conversion.</div>
-        </div>
+      <div class="story-stat">
+        <div class="story-stat__num">10</div>
+        <div class="story-stat__label">world-class clinicians on the advisory board</div>
       </div>
-
-      <div class="checklist-item reveal d3">
-        <div class="ci-num">05</div>
-        <div class="ci-body">
-          <div class="ci-title">Follow IM8 on Strava</div>
-          <div class="ci-desc">Join our community of athletes and health-focused creators. Great for content inspiration and social proof.</div>
-        </div>
-      </div>
-
-      <div class="checklist-item reveal d4">
-        <div class="ci-num">06</div>
-        <div class="ci-body">
-          <div class="ci-title">Post &amp; Tag Us</div>
-          <div class="ci-desc">Use #IM8Health and tag @im8health. Best-performing ambassadors get featured in our newsletter and social channels.</div>
-        </div>
-      </div>
-
-      <div class="checklist-item reveal d1" style="border-top-color: var(--gold);">
-        <div class="ci-num" style="color: var(--gold);">07</div>
-        <div class="ci-body">
-          <div class="ci-title">Set Up Your Payout Method</div>
-          <div class="ci-desc">Log into your Social Snowball portal → Payout Methods → add your PayPal or preferred method. Do it now — your payout can't be sent until this is saved.</div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Clinical trial results -->
+    <div class="story-trial reveal d2">
+      <p class="story-trial__label">12-Week Randomised Controlled Trial · San Francisco Research Institute</p>
+      <div class="story-trial__grid">
+        <div>
+          <span class="story-trial__pct">95%</span>
+          <span class="story-trial__text">felt a noticeable boost in daily energy</span>
+        </div>
+        <div>
+          <span class="story-trial__pct">85%</span>
+          <span class="story-trial__text">less bloated with improved digestion</span>
+        </div>
+        <div>
+          <span class="story-trial__pct">80%</span>
+          <span class="story-trial__text">reported better sleep quality</span>
+        </div>
+        <div>
+          <span class="story-trial__pct">75%</span>
+          <span class="story-trial__text">noticed sharper focus &amp; mental clarity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ambassador showcase with photos -->
+    <p class="story-section-label reveal">Backed by world champions</p>
+    <div class="story-amb-grid reveal d1">
+      <div class="story-amb-card">
+        <img src="https://cdn.shopify.com/s/files/1/0637/4460/6375/files/20250922_DB_IM8_S11_002_1X1_1_3833f473-9c27-4b6b-b703-f872b5bbbcc2.jpg&width=600" class="story-amb-img" alt="David Beckham" loading="lazy" />
+        <div class="story-amb-body">
+          <div class="story-amb-name">David Beckham</div>
+          <div class="story-amb-role">Co-Founder &amp; Global Ambassador</div>
+          <div class="story-amb-quote">"It's simplified everything for me."</div>
+        </div>
+      </div>
+      <div class="story-amb-card">
+        <img src="https://im8health.com/cdn/shop/files/GIANNIS_FINAL_V2.png&width=600" class="story-amb-img" alt="Giannis Antetokounmpo" loading="lazy" />
+        <div class="story-amb-body">
+          <div class="story-amb-name">Giannis Antetokounmpo</div>
+          <div class="story-amb-role">NBA Champion · 2× MVP · 10× All-Star</div>
+          <div class="story-amb-quote">"I wish I had that as a kid."</div>
+        </div>
+      </div>
+      <div class="story-amb-card">
+        <img src="https://im8health.com/cdn/shop/files/BURGUNDY_SHOT_03_IM8_ARYNA_0228-min-fb-square-1200-1200.jpg&width=600" class="story-amb-img" alt="Aryna Sabalenka" loading="lazy" />
+        <div class="story-amb-body">
+          <div class="story-amb-name">Aryna Sabalenka</div>
+          <div class="story-amb-role">World No. 1 · 4× Grand Slam Champion</div>
+          <div class="story-amb-quote">"I trust IM8 because the science is real."</div>
+        </div>
+      </div>
+      <div class="story-amb-card">
+        <img src="https://im8health.com/cdn/shop/files/OB_202602_Bahrain_Sponsors_MZ5A0173.jpg&width=600" class="story-amb-img" alt="Ollie Bearman" loading="lazy" />
+        <div class="story-amb-body">
+          <div class="story-amb-name">Ollie Bearman</div>
+          <div class="story-amb-role">Formula 1 Driver</div>
+          <div class="story-amb-quote">"IM8 gives me the daily nutrition foundation."</div>
+        </div>
+      </div>
+      <div class="story-amb-card">
+        <img src="https://cdn.shopify.com/s/files/1/0637/4460/6375/files/dustinpoirier.webp&width=600" class="story-amb-img" alt="Dustin Poirier" loading="lazy" />
+        <div class="story-amb-body">
+          <div class="story-amb-name">Dustin Poirier</div>
+          <div class="story-amb-role">Former UFC Interim Lightweight Champion</div>
+          <div class="story-amb-quote">"Partnering with IM8 was a no-brainer."</div>
+        </div>
+      </div>
+      <div class="story-amb-card">
+        <div class="story-amb-img" style="height:180px;background:linear-gradient(135deg,rgba(164,0,17,0.35),rgba(80,0,11,0.6));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:0.9rem;font-weight:600;color:rgba(232,200,200,0.4);letter-spacing:0.08em;text-align:center;padding:20px;">#1 NYT Bestselling Author</div>
+        <div class="story-amb-body">
+          <div class="story-amb-name">Jay Shetty</div>
+          <div class="story-amb-role">#1 NYT Bestselling Author &amp; Podcast Host</div>
+          <div class="story-amb-quote">"My morning routine finally feels foundational."</div>
+        </div>
+      </div>
+    </div>
+    <p class="story-amb-more reveal">+ Gaby Dabrowski (4× Grand Slam · Cancer Survivor) · Mike Yanguas (World No. 7 Padel) · Tavi Castro (Professional Freediver) · and growing</p>
+
+    <!-- Scientific advisory board -->
+    <p class="story-section-label reveal">Scientific advisory board</p>
+    <p class="story-board-title reveal d1">Mayo Clinic · NASA · Cedars-Sinai · Imperial College London · Next Health</p>
+    <div class="story-board-grid reveal d2">
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. Dawn Mussallem</div>
+        <div class="sbc-role">CMO, Fountain Life · Mayo Clinic</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. James L. Green</div>
+        <div class="sbc-role">Former Chief Scientist, NASA</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Prof. Suzanne Devkota</div>
+        <div class="sbc-role">Director, Cedars-Sinai Microbiome Institute</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. James DiNicolantonio</div>
+        <div class="sbc-role">Cardiovascular Researcher · 300+ papers</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. Amy Shah</div>
+        <div class="sbc-role">Double Board-Certified Physician</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. Ara Suppiah</div>
+        <div class="sbc-role">Sports Physician · 7 World No. 1 athletes</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. Darshan Shah</div>
+        <div class="sbc-role">CEO, Next Health · Mayo Clinic trained</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. Karan Rajan</div>
+        <div class="sbc-role">Imperial College London · 12M+ followers</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Simon Hill</div>
+        <div class="sbc-role">Nutritionist · 40M+ podcast listens</div>
+      </div>
+      <div class="story-board-card">
+        <div class="sbc-name">Dr. Pamela Mehta</div>
+        <div class="sbc-role">Orthopedic Surgeon · Regenerative Medicine</div>
+      </div>
+    </div>
+
+    <!-- Clinician quote -->
+    <div class="story-clin-quote reveal">
+      <blockquote>
+        <p>"The Pro formulation isn't just an update — it's an evolution. By upgrading to bioactive forms and significantly increasing key dosages, we are delivering a level of cellular support that is rarely seen in a single product. This is clinical-grade nutrition, optimised for real-world performance."</p>
+        <cite>Dr. Dawn Mussallem — CMO of Fountain Life &amp; Mayo Clinic Integrative Oncologist</cite>
+      </blockquote>
+    </div>
+
+    <!-- Press -->
+    <div class="story-press reveal">
+      <p class="story-press-label">As seen in</p>
+      <div class="story-press-logos">
+        <span>Forbes</span>
+        <span>NBC Today</span>
+        <span>Times</span>
+        <span>Men's Journal</span>
+        <span>Bloom</span>
+      </div>
+    </div>
+
+    <!-- Oxford / ISS research -->
+    <div class="story-oxford reveal d1">
+      <p class="story-oxford-badge">Research</p>
+      <p class="story-oxford-text">IM8's CRT8™ formula is currently aboard the International Space Station in a groundbreaking University of Oxford experiment, launched via SpaceX CRS-31 in November 2024.</p>
+    </div>
+
   </section>
 
   <!-- REWARDS / FREE PRODUCT -->
@@ -1976,60 +2369,146 @@
     </div>
   </section>
 
-  <!-- BRAND STORY BANNER -->
-  <div class="brand-banner">
-    <div>
-      <p class="section-eyebrow">Brand Foundation</p>
-      <h2 class="section-title reveal">The Story<br>That <em>Sells</em></h2>
-      <div class="section-rule reveal d1"></div>
-      <p class="brand-prose reveal d2">
-        IM8 isn't a supplement brand. It's a daily ritual for people who refuse to leave performance to chance. Co-founded by David Beckham — a man who turned a Red Card moment into a career-defining comeback — IM8 embodies the belief that adversity is the fuel for optimal health.
-      </p>
-      <ul class="brand-pills reveal d3">
-        <li>NSF Certified Sport — trusted by professional athletes</li>
-        <li>Vegan, Allergen-free, Gluten-free, No artificial flavors or sweeteners</li>
-        <li>Third-party tested for 280+ banned substances — WADA compliant</li>
-        <li>One sachet, every day — that's the entire protocol</li>
-      </ul>
-    </div>
-    <div class="brand-stats-col">
-      <div class="bstat reveal d1">
-        <div class="bstat-fig">Daily Ultimate Essentials Pro</div>
-        <div class="bstat-label">Flagship · NSF Certified Sport · Powers core creator content</div>
-      </div>
-      <div class="bstat reveal d2">
-        <div class="bstat-fig">Daily Ultimate Longevity</div>
-        <div class="bstat-label">Advanced formula · Targets hallmarks of aging with CRT8™</div>
-      </div>
-      <div class="bstat reveal d3">
-        <div class="bstat-fig">The Beckham Stack</div>
-        <div class="bstat-label">Both products bundled · The complete system · Beckham's daily choice</div>
-      </div>
-      <div class="bstat reveal d4">
-        <div class="bstat-fig">9 Organ Systems</div>
-        <div class="bstat-label">Digestive · Immune · Heart · Muscular · Skeletal · Skin & Hair · Brain · Endocrine · Hydration</div>
-      </div>
-    </div>
-  </div>
+  <!-- QUICK START -->
+  <section id="quickstart">
+    <p class="section-eyebrow reveal">Quick-Start Checklist</p>
+    <h2 class="section-title reveal d1">Post in Your<br><em>First 7 Days</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="checklist-grid">
 
-  <!-- PROOF STATS -->
-  <div class="proof-strip">
-    <div class="proof-stat reveal">
-      <div class="ps-pct">700K+</div>
-      <div class="ps-text">customer purchases across the IM8 range worldwide</div>
-      <div class="ps-source">IM8 Health</div>
+      <div class="checklist-item reveal d1">
+        <div class="ci-num">01</div>
+        <div class="ci-body">
+          <div class="ci-title">Join the Discord</div>
+          <div class="ci-desc">Your home base. Weekly briefs, trend alerts, and direct access to the IM8 team. Link is in the nav above.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d2">
+        <div class="ci-num">02</div>
+        <div class="ci-body">
+          <div class="ci-title">Get Your Ambassador Link</div>
+          <div class="ci-desc">Log into Social Snowball to access your unique tracking link. Use it in every bio, caption, and Linktree.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d3">
+        <div class="ci-num">03</div>
+        <div class="ci-body">
+          <div class="ci-title">Pick One Angle</div>
+          <div class="ci-desc">Don't start from scratch. Choose one of the 7 Proven Angles below and use the hook template to shoot your first video today.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d4">
+        <div class="ci-num">04</div>
+        <div class="ci-body">
+          <div class="ci-title">Download Brand Assets</div>
+          <div class="ci-desc">Logos, product imagery, and approved usage guidelines. Never use off-brand visuals — it hurts conversion.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d3">
+        <div class="ci-num">05</div>
+        <div class="ci-body">
+          <div class="ci-title">Follow IM8 on Strava</div>
+          <div class="ci-desc">Join our community of athletes and health-focused creators. Great for content inspiration and social proof.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d4">
+        <div class="ci-num">06</div>
+        <div class="ci-body">
+          <div class="ci-title">Post &amp; Tag Us</div>
+          <div class="ci-desc">Use #IM8Health and tag @im8health. Best-performing ambassadors get featured in our newsletter and social channels.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item reveal d1" style="border-top-color: var(--gold);">
+        <div class="ci-num" style="color: var(--gold);">07</div>
+        <div class="ci-body">
+          <div class="ci-title">Set Up Your Payout Method</div>
+          <div class="ci-desc">Log into your Social Snowball portal → Payout Methods → add your PayPal or preferred method. Do it now — your payout can't be sent until this is saved.</div>
+        </div>
+      </div>
+
     </div>
-    <div class="proof-stat reveal d2">
-      <div class="ps-pct">90+</div>
-      <div class="ps-text">bioavailable nutrients across 9 organ systems in a single daily sachet</div>
-      <div class="ps-source">IM8 Health</div>
+  </section>
+
+  <!-- KEY LINKS — pinned top for quick access -->
+  <section id="links">
+    <p class="section-eyebrow reveal">Key Links</p>
+    <h2 class="section-title reveal d1">Everything<br><em>In One Place</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="links-grid">
+
+      <a href="https://affiliates.socialsnowball.io/auth/affiliate/login" class="link-pill reveal d1" target="_blank">
+        <div class="lp-icon">🔗</div>
+        <div class="lp-body">
+          <div class="lp-label">Social Snowball Portal</div>
+          <div class="lp-sub">Your links & payouts</div>
+        </div>
+      </a>
+
+      <a href="https://discord.gg/tpzwzpWbvs" class="link-pill reveal d2" target="_blank">
+        <div class="lp-icon">💬</div>
+        <div class="lp-body">
+          <div class="lp-label">Ambassador Discord</div>
+          <div class="lp-sub">Weekly briefs & community</div>
+        </div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1Z8-qtFWtwIH8JWGOFtL5Qh5tQOjfJbFy" class="link-pill reveal d3" target="_blank">
+        <div class="lp-icon">📦</div>
+        <div class="lp-body">
+          <div class="lp-label">Brand Asset Drive</div>
+          <div class="lp-sub">Logos, imagery & guidelines</div>
+        </div>
+      </a>
+
+      <a href="https://insight.im8.digital/reports/top50?account=IM8-USD&sort=avg_hook_rate&days=30" class="link-pill reveal d1" target="_blank">
+        <div class="lp-icon">📊</div>
+        <div class="lp-body">
+          <div class="lp-label">IM8 Insight Portal</div>
+          <div class="lp-sub">Top 50 creators · im8ugc / im8ugc</div>
+        </div>
+      </a>
+
+      <a href="https://im8health.com" class="link-pill reveal d2" target="_blank">
+        <div class="lp-icon">🌐</div>
+        <div class="lp-body">
+          <div class="lp-label">IM8 Website</div>
+          <div class="lp-sub">im8health.com</div>
+        </div>
+      </a>
+
+      <a href="https://strava.app.link/u94yPNhyb2b" class="link-pill reveal d3" target="_blank">
+        <div class="lp-icon">🏃</div>
+        <div class="lp-body">
+          <div class="lp-label">IM8 Strava Club</div>
+          <div class="lp-sub">Join the fitness community</div>
+        </div>
+      </a>
+
+      <a href="mailto:affiliates@im8health.com" class="link-pill reveal d1">
+        <div class="lp-icon">📧</div>
+        <div class="lp-body">
+          <div class="lp-label">Ambassador Support</div>
+          <div class="lp-sub">affiliates@im8health.com</div>
+        </div>
+      </a>
+
+      <a href="creator-briefs.html" class="link-pill reveal d2">
+        <div class="lp-icon">🎬</div>
+        <div class="lp-body">
+          <div class="lp-label">Creator Briefs</div>
+          <div class="lp-sub">190 ready-to-film content briefs</div>
+        </div>
+      </a>
+
     </div>
-    <div class="proof-stat reveal d3">
-      <div class="ps-pct">280+</div>
-      <div class="ps-text">banned substances tested — NSF Certified Sport & WADA compliant</div>
-      <div class="ps-source">NSF International</div>
-    </div>
-  </div>
+
+  </section>
 
   <!-- 7 CONTENT ANGLES -->
   <section id="angles">
@@ -2072,6 +2551,40 @@
         <div class="ac-name">Social Proof Stacking</div>
         <div class="ac-hook">"David Beckham doesn't need to sell supplements. He takes IM8 because it works — and so do I."</div>
       </div>
+    </div>
+  </section>
+
+  <!-- AI PROMPTS -->
+  <section id="prompts">
+    <p class="section-eyebrow reveal">AI Prompt Library</p>
+    <h2 class="section-title reveal d1">Let AI Handle<br><em>the Heavy Lifting</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="prompts-grid">
+
+      <div class="prompt-card reveal d1">
+        <div class="pc-cat">Hook Generator</div>
+        <div class="pc-prompt">"Write 10 TikTok hooks for an IM8 Health ambassador using the [skeptic-to-believer / cost reframe / 30-day timeline] angle for a [doctor / athlete / biohacker] audience."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <div class="prompt-card reveal d2">
+        <div class="pc-cat">Caption Writer</div>
+        <div class="pc-prompt">"Write a TikTok caption for a video about [angle]. Include one CTA, two relevant hashtags, and keep it under 80 words. Brand voice: direct, warm, science-backed."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <div class="prompt-card reveal d1">
+        <div class="pc-cat">Script Builder</div>
+        <div class="pc-prompt">"Write a 45-second TikTok script for IM8. Open with this hook: [paste hook]. Include one clinical stat, one personal experience beat, and a soft CTA. No hard sell."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <div class="prompt-card reveal d2">
+        <div class="pc-cat">Objection Handler</div>
+        <div class="pc-prompt">"A viewer commented '[paste objection]' on my IM8 video. Write a response that's helpful, credible, and lightly promotional. Under 50 words."</div>
+        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
     </div>
   </section>
 
@@ -2197,40 +2710,6 @@
       </div>
     </div>
 
-  </section>
-
-  <!-- AI PROMPTS -->
-  <section id="prompts">
-    <p class="section-eyebrow reveal">AI Prompt Library</p>
-    <h2 class="section-title reveal d1">Let AI Handle<br><em>the Heavy Lifting</em></h2>
-    <div class="section-rule reveal d2"></div>
-    <div class="prompts-grid">
-
-      <div class="prompt-card reveal d1">
-        <div class="pc-cat">Hook Generator</div>
-        <div class="pc-prompt">"Write 10 TikTok hooks for an IM8 Health ambassador using the [skeptic-to-believer / cost reframe / 30-day timeline] angle for a [doctor / athlete / biohacker] audience."</div>
-        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-      </div>
-
-      <div class="prompt-card reveal d2">
-        <div class="pc-cat">Caption Writer</div>
-        <div class="pc-prompt">"Write a TikTok caption for a video about [angle]. Include one CTA, two relevant hashtags, and keep it under 80 words. Brand voice: direct, warm, science-backed."</div>
-        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-      </div>
-
-      <div class="prompt-card reveal d1">
-        <div class="pc-cat">Script Builder</div>
-        <div class="pc-prompt">"Write a 45-second TikTok script for IM8. Open with this hook: [paste hook]. Include one clinical stat, one personal experience beat, and a soft CTA. No hard sell."</div>
-        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-      </div>
-
-      <div class="prompt-card reveal d2">
-        <div class="pc-cat">Objection Handler</div>
-        <div class="pc-prompt">"A viewer commented '[paste objection]' on my IM8 video. Write a response that's helpful, credible, and lightly promotional. Under 50 words."</div>
-        <button class="pc-copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-      </div>
-
-    </div>
   </section>
 
   <!-- FAQ -->
