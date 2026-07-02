@@ -775,6 +775,73 @@
     }
 
     /* =====================
+       CREATOR BRIEFS BANNER
+    ===================== */
+    .briefs-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-top: 16px;
+      padding: 32px 36px;
+      background: linear-gradient(100deg, var(--crimson) 0%, #7a0010 100%);
+      border: 1px solid rgba(255,150,147,0.25);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .briefs-banner:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(164,0,17,0.45);
+    }
+    .briefs-banner__eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,150,147,0.7);
+      margin-bottom: 6px;
+    }
+    .briefs-banner__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .briefs-banner__desc {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,233,216,0.7);
+      line-height: 1.55;
+      max-width: 560px;
+    }
+    .briefs-banner__cta {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 12px 24px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .briefs-banner:hover .briefs-banner__cta {
+      background: rgba(255,255,255,0.22);
+    }
+    @media (max-width: 640px) {
+      .briefs-banner { flex-direction: column; align-items: flex-start; }
+      .briefs-banner__cta { align-self: stretch; text-align: center; }
+    }
+
+    /* =====================
        DIRECT PRODUCT LINKS
     ===================== */
     .direct-links-block {
@@ -2045,7 +2112,7 @@
     <p class="story-section-label reveal">Backed by world champions</p>
     <div class="story-amb-grid reveal d1">
       <div class="story-amb-card">
-        <img src="https://cdn.shopify.com/s/files/1/0637/4460/6375/files/20250922_DB_IM8_S11_002_1X1_1_3833f473-9c27-4b6b-b703-f872b5bbbcc2.jpg&width=600" class="story-amb-img" alt="David Beckham" loading="lazy" />
+        <img src="https://cdn.shopify.com/s/files/1/0637/4460/6375/files/20250922_DB_IM8_S11_002_1X1_1_3833f473-9c27-4b6b-b703-f872b5bbbcc2.jpg?width=600" class="story-amb-img" alt="David Beckham" loading="lazy" />
         <div class="story-amb-body">
           <div class="story-amb-name">David Beckham</div>
           <div class="story-amb-role">Co-Founder &amp; Global Ambassador</div>
@@ -2053,7 +2120,7 @@
         </div>
       </div>
       <div class="story-amb-card">
-        <img src="https://im8health.com/cdn/shop/files/GIANNIS_FINAL_V2.png&width=600" class="story-amb-img" alt="Giannis Antetokounmpo" loading="lazy" />
+        <img src="https://im8health.com/cdn/shop/files/GIANNIS_FINAL_V2.png?width=600" class="story-amb-img" alt="Giannis Antetokounmpo" loading="lazy" />
         <div class="story-amb-body">
           <div class="story-amb-name">Giannis Antetokounmpo</div>
           <div class="story-amb-role">NBA Champion · 2× MVP · 10× All-Star</div>
@@ -2061,7 +2128,7 @@
         </div>
       </div>
       <div class="story-amb-card">
-        <img src="https://im8health.com/cdn/shop/files/BURGUNDY_SHOT_03_IM8_ARYNA_0228-min-fb-square-1200-1200.jpg&width=600" class="story-amb-img" alt="Aryna Sabalenka" loading="lazy" />
+        <img src="https://im8health.com/cdn/shop/files/BURGUNDY_SHOT_03_IM8_ARYNA_0228-min-fb-square-1200-1200.jpg?width=600" class="story-amb-img" alt="Aryna Sabalenka" loading="lazy" />
         <div class="story-amb-body">
           <div class="story-amb-name">Aryna Sabalenka</div>
           <div class="story-amb-role">World No. 1 · 4× Grand Slam Champion</div>
@@ -2069,7 +2136,7 @@
         </div>
       </div>
       <div class="story-amb-card">
-        <img src="https://im8health.com/cdn/shop/files/OB_202602_Bahrain_Sponsors_MZ5A0173.jpg&width=600" class="story-amb-img" alt="Ollie Bearman" loading="lazy" />
+        <img src="https://im8health.com/cdn/shop/files/OB_202602_Bahrain_Sponsors_MZ5A0173.jpg?width=600" class="story-amb-img" alt="Ollie Bearman" loading="lazy" />
         <div class="story-amb-body">
           <div class="story-amb-name">Ollie Bearman</div>
           <div class="story-amb-role">Formula 1 Driver</div>
@@ -2077,7 +2144,7 @@
         </div>
       </div>
       <div class="story-amb-card">
-        <img src="https://cdn.shopify.com/s/files/1/0637/4460/6375/files/dustinpoirier.webp&width=600" class="story-amb-img" alt="Dustin Poirier" loading="lazy" />
+        <img src="https://cdn.shopify.com/s/files/1/0637/4460/6375/files/dustinpoirier.webp?width=600" class="story-amb-img" alt="Dustin Poirier" loading="lazy" />
         <div class="story-amb-body">
           <div class="story-amb-name">Dustin Poirier</div>
           <div class="story-amb-role">Former UFC Interim Lightweight Champion</div>
@@ -2498,15 +2565,16 @@
         </div>
       </a>
 
-      <a href="creator-briefs.html" class="link-pill reveal d2">
-        <div class="lp-icon">🎬</div>
-        <div class="lp-body">
-          <div class="lp-label">Creator Briefs</div>
-          <div class="lp-sub">190 ready-to-film content briefs</div>
-        </div>
-      </a>
-
     </div>
+
+    <a href="creator-briefs.html" class="briefs-banner reveal d1">
+      <div class="briefs-banner__left">
+        <div class="briefs-banner__eyebrow">Content Library</div>
+        <div class="briefs-banner__title">190 Creator Briefs</div>
+        <div class="briefs-banner__desc">Every persona. Every angle. Video formats, key messages, pricing CTAs, dos and donts — searchable and filterable. Pick one and film today.</div>
+      </div>
+      <div class="briefs-banner__cta">Browse Briefs →</div>
+    </a>
 
   </section>
 
