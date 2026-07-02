@@ -618,6 +618,30 @@
 
     .resource-card:hover .rc-arrow { transform: translateX(4px); }
 
+    .resource-card--featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      background: var(--burgundy);
+      border-bottom-color: var(--coral);
+      gap: 24px;
+    }
+    .resource-card--featured .rc-type { color: var(--coral); }
+    .resource-card--featured .rc-title { color: var(--off-white); font-size: 1.5rem; }
+    .resource-card--featured .rc-desc { color: rgba(255,255,255,0.65); font-size: 0.82rem; }
+    .resource-card--featured .rc-arrow {
+      margin-top: 0;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--coral);
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 600px) {
+      .resource-card--featured { flex-direction: column; align-items: flex-start; }
+    }
+
     /* =====================
        AI PROMPTS
     ===================== */
@@ -1576,6 +1600,7 @@
       <li><a href="#quickstart">Get Started</a></li>
       <li><a href="#rewards">Rewards</a></li>
       <li><a href="#angles">Angles</a></li>
+      <li><a href="creator-briefs.html">Briefs</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="#payouts">Payouts</a></li>
       <li><a href="#portal">Portal</a></li>
@@ -1592,6 +1617,7 @@
     <a href="#quickstart" onclick="closeMobileNav()">Get Started</a>
     <a href="#rewards" onclick="closeMobileNav()">Rewards</a>
     <a href="#angles" onclick="closeMobileNav()">Angles</a>
+    <a href="creator-briefs.html" onclick="closeMobileNav()">Briefs</a>
     <a href="#resources" onclick="closeMobileNav()">Resources</a>
     <a href="#payouts" onclick="closeMobileNav()">Payouts</a>
     <a href="#portal" onclick="closeMobileNav()">Portal</a>
@@ -2047,6 +2073,13 @@
     <h2 class="section-title reveal d1">Everything You Need<br><em>to Create Today</em></h2>
     <div class="section-rule reveal d2"></div>
     <div class="resources-grid">
+
+      <a href="creator-briefs.html" class="resource-card resource-card--featured reveal d1">
+        <div class="rc-type">Content Library</div>
+        <div class="rc-title">190 Creator Briefs — Searchable & Filterable</div>
+        <div class="rc-desc">Every brief your affiliates need: video formats, key messages, pricing CTAs, do's &amp; don'ts — organised by persona and filterable by category. Ready to film.</div>
+        <div class="rc-arrow">Browse briefs →</div>
+      </a>
 
       <a href="/files/im8-playbook.pdf" class="resource-card reveal d1" target="_blank">
         <div class="rc-type">Playbook</div>
