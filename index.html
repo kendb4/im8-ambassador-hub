@@ -2247,11 +2247,11 @@
       <div>
         <div class="wcb-eyebrow">Use this now</div>
         <div class="wcb-message">10% off your first IM8 order</div>
-        <div class="wcb-sub">Haven't driven a sale yet? No problem — use <strong>WELCOME10</strong> at checkout to try the product at a discount while you ramp up.</div>
+        <div class="wcb-sub">Haven't driven a sale yet? No problem — use <strong>your own discount code</strong> at checkout to try the product at a discount while you ramp up. It only applies to your first order, and you won't earn commission on that purchase.</div>
       </div>
       <div class="wcb-code-wrap">
-        <div class="wcb-code">WELCOME10</div>
-        <button class="wcb-copy" onclick="copyWelcomeCode(this)">Copy code</button>
+        <div class="wcb-code">YOUR CODE</div>
+        <a class="wcb-copy" href="https://affiliates.socialsnowball.io/auth/affiliate/login" target="_blank">Find my code</a>
       </div>
     </div>
 
@@ -2978,17 +2978,6 @@
         btn.classList.add('copied');
         setTimeout(() => {
           btn.textContent = 'Copy Prompt';
-          btn.classList.remove('copied');
-        }, 2000);
-      });
-    }
-
-    function copyWelcomeCode(btn) {
-      navigator.clipboard.writeText('WELCOME10').then(() => {
-        btn.textContent = 'Copied ✓';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.textContent = 'Copy code';
           btn.classList.remove('copied');
         }, 2000);
       });
